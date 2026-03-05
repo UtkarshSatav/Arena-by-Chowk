@@ -8,13 +8,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#FFB800",
-        "primary-light": "#FFC933",
-        accent: "#00F0FF",
-        "bg-dark": "#070707",
-        "surface-dark": "#111111",
-        "surface-mid": "#161616",
-        obsidian: "#070707",
+        primary: "var(--primary)",
+        "primary-light": "var(--primary-light)",
+        accent: "var(--accent)",
+        "bg-dark": "var(--bg-color)",
+        "surface-dark": "var(--surface-dark)",
+        "surface-mid": "var(--surface-mid)",
+        obsidian: "var(--bg-color)",
+        white: "rgba(var(--glass-rgb), <alpha-value>)",
+        black: "rgba(var(--inverse-glass-rgb), <alpha-value>)"
       },
       fontFamily: {
         display: ["Montserrat", "sans-serif"],

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import FadeIn from "./FadeIn";
 
 const experiences = [
     {
@@ -61,7 +62,7 @@ export default function Experience() {
         <section
             id="experience"
             className="py-28"
-            style={{ background: "#111111" }}
+            style={{ background: "var(--surface-dark)" }}
         >
             <div className="max-w-7xl mx-auto px-6">
                 {/* Header */}
@@ -90,112 +91,113 @@ export default function Experience() {
                 {/* Experience blocks */}
                 <div className="space-y-24">
                     {experiences.map((exp, i) => (
-                        <div
-                            key={i}
-                            className={`flex flex-col ${exp.side === "right" ? "lg:flex-row-reverse" : "lg:flex-row"
-                                } items-center gap-12 lg:gap-20`}
-                        >
-                            {/* Image */}
-                            <div className="w-full lg:w-1/2 relative">
-                                <div
-                                    className="relative overflow-hidden rounded-sm"
-                                    style={{
-                                        border: `1px solid ${exp.accent}25`,
-                                        boxShadow: `0 0 60px ${exp.accent}15`,
-                                    }}
-                                >
-                                    <Image
-                                        src={exp.image}
-                                        alt={exp.title}
-                                        width={800}
-                                        height={500}
-                                        className="w-full h-72 lg:h-96 object-cover img-hover"
-                                    />
-                                    {/* Overlay tag */}
-                                    <div className="absolute top-5 left-5">
-                                        <span
-                                            className="text-[9px] font-bold tracking-[0.3em] uppercase px-3 py-1.5"
-                                            style={{
-                                                background: exp.accent,
-                                                color: exp.accent === "#FFB800" ? "#000" : "#000",
-                                            }}
-                                        >
-                                            {exp.tag}
-                                        </span>
-                                    </div>
-                                    {/* Revenue badge */}
+                        <FadeIn key={i} delay={0.2} direction="up" fullWidth>
+                            <div
+                                className={`flex flex-col ${exp.side === "right" ? "lg:flex-row-reverse" : "lg:flex-row"
+                                    } items-center gap-12 lg:gap-20`}
+                            >
+                                {/* Image */}
+                                <div className="w-full lg:w-1/2 relative">
                                     <div
-                                        className="absolute bottom-5 right-5 hud-border px-5 py-3"
+                                        className="relative overflow-hidden rounded-sm"
                                         style={{
-                                            background: "rgba(0,0,0,0.7)",
-                                            backdropFilter: "blur(10px)",
-                                            borderColor: `${exp.accent}50`,
+                                            border: `1px solid ${exp.accent}25`,
+                                            boxShadow: `0 0 60px ${exp.accent}15`,
                                         }}
                                     >
-                                        <p
-                                            className="stat-number text-xl"
-                                            style={{ color: exp.accent }}
+                                        <Image
+                                            src={exp.image}
+                                            alt={exp.title}
+                                            width={800}
+                                            height={500}
+                                            className="w-full h-72 lg:h-96 object-cover img-hover"
+                                        />
+                                        {/* Overlay tag */}
+                                        <div className="absolute top-5 left-5">
+                                            <span
+                                                className="text-[9px] font-bold tracking-[0.3em] uppercase px-3 py-1.5"
+                                                style={{
+                                                    background: exp.accent,
+                                                    color: "var(--text-inverse)",
+                                                }}
+                                            >
+                                                {exp.tag}
+                                            </span>
+                                        </div>
+                                        {/* Revenue badge */}
+                                        <div
+                                            className="absolute bottom-5 right-5 hud-border px-5 py-3"
+                                            style={{
+                                                background: "rgba(var(--inverse-glass-rgb),0.7)",
+                                                backdropFilter: "blur(10px)",
+                                                borderColor: `${exp.accent}50`,
+                                            }}
                                         >
-                                            {exp.revenue}
-                                        </p>
-                                        <p
-                                            className="text-[9px] uppercase tracking-widest"
-                                            style={{ color: "rgba(255,255,255,0.4)" }}
-                                        >
-                                            {exp.revenueLabel}
-                                        </p>
+                                            <p
+                                                className="stat-number text-xl"
+                                                style={{ color: exp.accent }}
+                                            >
+                                                {exp.revenue}
+                                            </p>
+                                            <p
+                                                className="text-[9px] uppercase tracking-widest"
+                                                style={{ color: "rgba(var(--glass-rgb),0.4)" }}
+                                            >
+                                                {exp.revenueLabel}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* Content */}
+                                <div className="w-full lg:w-1/2">
+                                    <p
+                                        className="text-[9px] font-bold tracking-[0.4em] uppercase mb-3"
+                                        style={{ color: exp.accent }}
+                                    >
+                                        {exp.sub}
+                                    </p>
+                                    <h3
+                                        className="font-black uppercase mb-5"
+                                        style={{
+                                            fontFamily: "Montserrat, sans-serif",
+                                            fontSize: "clamp(28px, 3.5vw, 44px)",
+                                            color: "var(--text-main)",
+                                            lineHeight: "1",
+                                        }}
+                                    >
+                                        {exp.title}
+                                    </h3>
+                                    <p
+                                        className="text-sm leading-relaxed mb-10"
+                                        style={{ color: "rgba(var(--glass-rgb),0.5)" }}
+                                    >
+                                        {exp.desc}
+                                    </p>
+
+                                    {/* Highlights grid */}
+                                    <div className="grid grid-cols-2 gap-4">
+                                        {exp.highlights.map((h, j) => (
+                                            <div
+                                                key={j}
+                                                className="flex items-center gap-3 p-4 rounded-sm"
+                                                style={{ background: "rgba(var(--glass-rgb),0.03)", border: "1px solid rgba(var(--glass-rgb),0.06)" }}
+                                            >
+                                                <span
+                                                    className="material-symbols-outlined text-xl"
+                                                    style={{ color: exp.accent }}
+                                                >
+                                                    {h.icon}
+                                                </span>
+                                                <span className="text-xs font-medium" style={{ color: "rgba(var(--glass-rgb),0.7)" }}>
+                                                    {h.text}
+                                                </span>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
-
-                            {/* Content */}
-                            <div className="w-full lg:w-1/2">
-                                <p
-                                    className="text-[9px] font-bold tracking-[0.4em] uppercase mb-3"
-                                    style={{ color: exp.accent }}
-                                >
-                                    {exp.sub}
-                                </p>
-                                <h3
-                                    className="font-black uppercase mb-5"
-                                    style={{
-                                        fontFamily: "Montserrat, sans-serif",
-                                        fontSize: "clamp(28px, 3.5vw, 44px)",
-                                        color: "#fff",
-                                        lineHeight: "1",
-                                    }}
-                                >
-                                    {exp.title}
-                                </h3>
-                                <p
-                                    className="text-sm leading-relaxed mb-10"
-                                    style={{ color: "rgba(255,255,255,0.5)" }}
-                                >
-                                    {exp.desc}
-                                </p>
-
-                                {/* Highlights grid */}
-                                <div className="grid grid-cols-2 gap-4">
-                                    {exp.highlights.map((h, j) => (
-                                        <div
-                                            key={j}
-                                            className="flex items-center gap-3 p-4 rounded-sm"
-                                            style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)" }}
-                                        >
-                                            <span
-                                                className="material-symbols-outlined text-xl"
-                                                style={{ color: exp.accent }}
-                                            >
-                                                {h.icon}
-                                            </span>
-                                            <span className="text-xs font-medium" style={{ color: "rgba(255,255,255,0.7)" }}>
-                                                {h.text}
-                                            </span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
+                        </FadeIn>
                     ))}
                 </div>
             </div>

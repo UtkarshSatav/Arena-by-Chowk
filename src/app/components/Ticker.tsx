@@ -21,7 +21,7 @@ export default function Ticker() {
             className="relative overflow-hidden py-4 border-y"
             style={{
                 background: "#FFB800",
-                borderColor: "rgba(0,0,0,0.1)",
+                borderColor: "rgba(var(--inverse-glass-rgb),0.1)",
             }}
         >
             <div className="ticker-track">

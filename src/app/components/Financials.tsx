@@ -1,5 +1,7 @@
 "use client";
 
+import FadeIn from "./FadeIn";
+
 const capexData = [
     { label: "Civil & Interior", value: "₹6 Cr", percent: 55, color: "#FFB800" },
     { label: "Game Equipment", value: "₹2 Cr", percent: 18, color: "#FFC933" },
@@ -26,7 +28,7 @@ export default function Financials() {
         <section
             id="financials"
             className="py-28"
-            style={{ background: "#070707" }}
+            style={{ background: "var(--bg-color)" }}
         >
             <div className="max-w-7xl mx-auto px-6">
                 {/* Header */}
@@ -60,198 +62,205 @@ export default function Financials() {
                         { label: "Annual Dev Share", value: "₹2.56 Cr", sub: "15% of gross revenue", icon: "payments" },
                         { label: "Annual ROI", value: "~23%", sub: "Annuity-style returns", icon: "donut_large" },
                     ].map((k, i) => (
-                        <div
-                            key={i}
-                            className="glass-card feature-card p-7 text-center rounded-sm"
-                            style={{ borderColor: "rgba(255,184,0,0.15)" }}
-                        >
-                            <span
-                                className="material-symbols-outlined text-3xl mb-4 block"
-                                style={{ color: "#FFB800" }}
+                        <FadeIn key={i} delay={0.1 * i} direction="up" fullWidth>
+                            <div
+                                className="glass-card feature-card p-7 text-center rounded-sm h-full"
+                                style={{ borderColor: "rgba(255,184,0,0.15)" }}
                             >
-                                {k.icon}
-                            </span>
-                            <p
-                                className="stat-number text-2xl md:text-3xl mb-1"
-                                style={{ color: "#FFB800" }}
-                            >
-                                {k.value}
-                            </p>
-                            <p className="text-[10px] font-bold uppercase tracking-widest mb-1 text-white">
-                                {k.label}
-                            </p>
-                            <p className="text-[10px]" style={{ color: "rgba(255,255,255,0.35)" }}>
-                                {k.sub}
-                            </p>
-                        </div>
+                                <span
+                                    className="material-symbols-outlined text-3xl mb-4 block"
+                                    style={{ color: "#FFB800" }}
+                                >
+                                    {k.icon}
+                                </span>
+                                <p
+                                    className="stat-number text-2xl md:text-3xl mb-1"
+                                    style={{ color: "#FFB800" }}
+                                >
+                                    {k.value}
+                                </p>
+                                <p className="text-[10px] font-bold uppercase tracking-widest mb-1 text-white">
+                                    {k.label}
+                                </p>
+                                <p className="text-[10px]" style={{ color: "rgba(var(--glass-rgb),0.35)" }}>
+                                    {k.sub}
+                                </p>
+                            </div>
+                        </FadeIn>
                     ))}
                 </div>
 
                 {/* Capex + Revenue split */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
                     {/* Capex breakdown */}
-                    <div
-                        className="glass-card rounded-sm p-8"
-                        style={{ borderColor: "rgba(255,184,0,0.12)" }}
-                    >
-                        <h3
-                            className="font-bold uppercase tracking-wider text-white mb-2"
-                            style={{ fontFamily: "Montserrat, sans-serif" }}
+                    <FadeIn delay={0.2} direction="left" fullWidth>
+                        <div
+                            className="glass-card rounded-sm p-8 h-full"
+                            style={{ borderColor: "rgba(255,184,0,0.12)" }}
                         >
-                            CapEx Allocation
-                        </h3>
-                        <p className="text-[11px] mb-8" style={{ color: "rgba(255,255,255,0.4)" }}>
-                            Total: ₹11 Crore across 4 key components
-                        </p>
-                        <div className="space-y-6">
-                            {capexData.map((c, i) => (
-                                <div key={i}>
-                                    <div className="flex justify-between mb-2">
-                                        <span className="text-sm font-medium text-white">{c.label}</span>
-                                        <span className="text-sm font-bold" style={{ color: c.color }}>
-                                            {c.value}
-                                        </span>
-                                    </div>
-                                    <div className="progress-bar">
-                                        <div
-                                            className="progress-fill"
-                                            style={{
-                                                width: `${c.percent}%`,
-                                                background: `linear-gradient(90deg, ${c.color}, ${c.color}99)`,
-                                            }}
-                                        />
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Revenue donut chart */}
-                    <div
-                        className="glass-card rounded-sm p-8"
-                        style={{ borderColor: "rgba(255,184,0,0.12)" }}
-                    >
-                        <h3
-                            className="font-bold uppercase tracking-wider text-white mb-2"
-                            style={{ fontFamily: "Montserrat, sans-serif" }}
-                        >
-                            Monthly Revenue Projection
-                        </h3>
-                        <p className="text-[11px] mb-8" style={{ color: "rgba(255,255,255,0.4)" }}>
-                            Pessimistic case — ₹1.42 Crore/month total
-                        </p>
-
-                        {/* SVG Donut */}
-                        <div className="flex items-center justify-center gap-12">
-                            <div className="relative w-48 h-48 shrink-0">
-                                <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
-                                    <circle cx="18" cy="18" r="15.9155" fill="transparent" stroke="rgba(255,255,255,0.05)" strokeWidth="3.5" />
-                                    {/* Food court: 67% */}
-                                    <circle
-                                        cx="18" cy="18" r="15.9155" fill="transparent"
-                                        stroke="#FFB800" strokeWidth="3.5"
-                                        strokeDasharray="67 33"
-                                        strokeDashoffset="0"
-                                        strokeLinecap="butt"
-                                    />
-                                    {/* Game zone: 33% */}
-                                    <circle
-                                        cx="18" cy="18" r="15.9155" fill="transparent"
-                                        stroke="#00F0FF" strokeWidth="3.5"
-                                        strokeDasharray="33 67"
-                                        strokeDashoffset="-67"
-                                        strokeLinecap="butt"
-                                    />
-                                </svg>
-                                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                                    <span className="stat-number text-xl text-white">₹1.42</span>
-                                    <span className="text-[9px] uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.4)" }}>
-                                        Crore/Mo
-                                    </span>
-                                </div>
-                            </div>
-
+                            <h3
+                                className="font-bold uppercase tracking-wider text-white mb-2"
+                                style={{ fontFamily: "Montserrat, sans-serif" }}
+                            >
+                                CapEx Allocation
+                            </h3>
+                            <p className="text-[11px] mb-8" style={{ color: "rgba(var(--glass-rgb),0.4)" }}>
+                                Total: ₹11 Crore across 4 key components
+                            </p>
                             <div className="space-y-6">
-                                {revenueStreams.map((r, i) => (
+                                {capexData.map((c, i) => (
                                     <div key={i}>
-                                        <div className="flex items-center gap-2 mb-1">
-                                            <span className="w-3 h-3 rounded-full" style={{ background: r.color }} />
-                                            <span className="text-xs font-bold text-white uppercase tracking-wider">
-                                                {r.label}
+                                        <div className="flex justify-between mb-2">
+                                            <span className="text-sm font-medium text-white">{c.label}</span>
+                                            <span className="text-sm font-bold" style={{ color: c.color }}>
+                                                {c.value}
                                             </span>
                                         </div>
-                                        <p className="stat-number text-2xl" style={{ color: r.color }}>
-                                            {r.monthly}
-                                        </p>
-                                        <p className="text-[9px] uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.35)" }}>
-                                            per month
-                                        </p>
+                                        <div className="progress-bar">
+                                            <div
+                                                className="progress-fill"
+                                                style={{
+                                                    width: `${c.percent}%`,
+                                                    background: `linear-gradient(90deg, ${c.color}, ${c.color}99)`,
+                                                }}
+                                            />
+                                        </div>
                                     </div>
                                 ))}
                             </div>
                         </div>
-                    </div>
+                    </FadeIn>
+
+                    {/* Revenue donut chart */}
+                    <FadeIn delay={0.4} direction="right" fullWidth>
+                        <div
+                            className="glass-card rounded-sm p-8 h-full"
+                            style={{ borderColor: "rgba(255,184,0,0.12)" }}
+                        >
+                            <h3
+                                className="font-bold uppercase tracking-wider text-white mb-2"
+                                style={{ fontFamily: "Montserrat, sans-serif" }}
+                            >
+                                Monthly Revenue Projection
+                            </h3>
+                            <p className="text-[11px] mb-8" style={{ color: "rgba(var(--glass-rgb),0.4)" }}>
+                                Pessimistic case — ₹1.42 Crore/month total
+                            </p>
+
+                            {/* SVG Donut */}
+                            <div className="flex items-center justify-center gap-12">
+                                <div className="relative w-48 h-48 shrink-0">
+                                    <svg viewBox="0 0 36 36" className="w-full h-full -rotate-90">
+                                        <circle cx="18" cy="18" r="15.9155" fill="transparent" stroke="rgba(var(--glass-rgb),0.05)" strokeWidth="3.5" />
+                                        {/* Food court: 67% */}
+                                        <circle
+                                            cx="18" cy="18" r="15.9155" fill="transparent"
+                                            stroke="#FFB800" strokeWidth="3.5"
+                                            strokeDasharray="67 33"
+                                            strokeDashoffset="0"
+                                            strokeLinecap="butt"
+                                        />
+                                        {/* Game zone: 33% */}
+                                        <circle
+                                            cx="18" cy="18" r="15.9155" fill="transparent"
+                                            stroke="#00F0FF" strokeWidth="3.5"
+                                            strokeDasharray="33 67"
+                                            strokeDashoffset="-67"
+                                            strokeLinecap="butt"
+                                        />
+                                    </svg>
+                                    <div className="absolute inset-0 flex flex-col items-center justify-center">
+                                        <span className="stat-number text-xl text-white">₹1.42</span>
+                                        <span className="text-[9px] uppercase tracking-widest" style={{ color: "rgba(var(--glass-rgb),0.4)" }}>
+                                            Crore/Mo
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div className="space-y-6">
+                                    {revenueStreams.map((r, i) => (
+                                        <div key={i}>
+                                            <div className="flex items-center gap-2 mb-1">
+                                                <span className="w-3 h-3 rounded-full" style={{ background: r.color }} />
+                                                <span className="text-xs font-bold text-white uppercase tracking-wider">
+                                                    {r.label}
+                                                </span>
+                                            </div>
+                                            <p className="stat-number text-2xl" style={{ color: r.color }}>
+                                                {r.monthly}
+                                            </p>
+                                            <p className="text-[9px] uppercase tracking-widest" style={{ color: "rgba(var(--glass-rgb),0.35)" }}>
+                                                per month
+                                            </p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </FadeIn>
                 </div>
 
                 {/* Comparison table */}
-                <div className="glass-card rounded-sm overflow-hidden" style={{ borderColor: "rgba(255,184,0,0.1)" }}>
-                    <div className="px-8 py-6 border-b" style={{ borderColor: "rgba(255,255,255,0.06)" }}>
-                        <h3
-                            className="font-bold uppercase tracking-wider text-white"
-                            style={{ fontFamily: "Montserrat, sans-serif" }}
-                        >
-                            ARENAA vs. Alternative Investments
-                        </h3>
-                        <p className="text-[11px] mt-1" style={{ color: "rgba(255,255,255,0.4)" }}>
-                            How ARENAA stacks up against traditional developer investment options
-                        </p>
-                    </div>
-                    <div className="overflow-x-auto">
-                        <table className="w-full text-left">
-                            <thead>
-                                <tr style={{ borderBottom: "1px solid rgba(255,255,255,0.06)", background: "rgba(255,255,255,0.02)" }}>
-                                    <th className="px-6 py-5 text-[10px] font-bold uppercase tracking-[0.3em]" style={{ color: "rgba(255,255,255,0.4)" }}>
-                                        Metric
-                                    </th>
-                                    <th className="px-6 py-5 text-[10px] font-bold uppercase tracking-[0.3em]" style={{ color: "#FFB800" }}>
-                                        ARENAA Hub
-                                    </th>
-                                    <th className="px-6 py-5 text-[10px] font-bold uppercase tracking-[0.3em]" style={{ color: "rgba(255,255,255,0.35)" }}>
-                                        Traditional Real Estate
-                                    </th>
-                                    <th className="px-6 py-5 text-[10px] font-bold uppercase tracking-[0.3em]" style={{ color: "rgba(255,255,255,0.35)" }}>
-                                        Retail Mall Units
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {comparisons.map((row, i) => (
-                                    <tr
-                                        key={i}
-                                        style={{
-                                            borderBottom: "1px solid rgba(255,255,255,0.04)",
-                                            background: row.highlight ? "rgba(255,184,0,0.03)" : "transparent",
-                                        }}
-                                        className="hover:bg-white/[0.01] transition-colors"
-                                    >
-                                        <td className="px-6 py-5 text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
-                                            {row.metric}
-                                        </td>
-                                        <td className="px-6 py-5 text-sm font-bold" style={{ color: row.highlight ? "#FFB800" : "#fff" }}>
-                                            {row.arenaa}
-                                        </td>
-                                        <td className="px-6 py-5 text-sm" style={{ color: "rgba(255,255,255,0.35)" }}>
-                                            {row.realEstate}
-                                        </td>
-                                        <td className="px-6 py-5 text-sm" style={{ color: "rgba(255,255,255,0.35)" }}>
-                                            {row.malls}
-                                        </td>
+                <FadeIn delay={0.6} direction="up" fullWidth>
+                    <div className="glass-card rounded-sm overflow-hidden" style={{ borderColor: "rgba(255,184,0,0.1)" }}>
+                        <div className="px-8 py-6 border-b" style={{ borderColor: "rgba(var(--glass-rgb),0.06)" }}>
+                            <h3
+                                className="font-bold uppercase tracking-wider text-white"
+                                style={{ fontFamily: "Montserrat, sans-serif" }}
+                            >
+                                ARENAA vs. Alternative Investments
+                            </h3>
+                            <p className="text-[11px] mt-1" style={{ color: "rgba(var(--glass-rgb),0.4)" }}>
+                                How ARENAA stacks up against traditional developer investment options
+                            </p>
+                        </div>
+                        <div className="overflow-x-auto">
+                            <table className="w-full text-left">
+                                <thead>
+                                    <tr style={{ borderBottom: "1px solid rgba(var(--glass-rgb),0.06)", background: "rgba(var(--glass-rgb),0.02)" }}>
+                                        <th className="px-6 py-5 text-[10px] font-bold uppercase tracking-[0.3em]" style={{ color: "rgba(var(--glass-rgb),0.4)" }}>
+                                            Metric
+                                        </th>
+                                        <th className="px-6 py-5 text-[10px] font-bold uppercase tracking-[0.3em]" style={{ color: "#FFB800" }}>
+                                            ARENAA Hub
+                                        </th>
+                                        <th className="px-6 py-5 text-[10px] font-bold uppercase tracking-[0.3em]" style={{ color: "rgba(var(--glass-rgb),0.35)" }}>
+                                            Traditional Real Estate
+                                        </th>
+                                        <th className="px-6 py-5 text-[10px] font-bold uppercase tracking-[0.3em]" style={{ color: "rgba(var(--glass-rgb),0.35)" }}>
+                                            Retail Mall Units
+                                        </th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    {comparisons.map((row, i) => (
+                                        <tr
+                                            key={i}
+                                            style={{
+                                                borderBottom: "1px solid rgba(var(--glass-rgb),0.04)",
+                                                background: row.highlight ? "rgba(255,184,0,0.03)" : "transparent",
+                                            }}
+                                            className="hover:bg-white/[0.01] transition-colors"
+                                        >
+                                            <td className="px-6 py-5 text-sm" style={{ color: "rgba(var(--glass-rgb),0.5)" }}>
+                                                {row.metric}
+                                            </td>
+                                            <td className="px-6 py-5 text-sm font-bold" style={{ color: row.highlight ? "#FFB800" : "var(--text-main)" }}>
+                                                {row.arenaa}
+                                            </td>
+                                            <td className="px-6 py-5 text-sm" style={{ color: "rgba(var(--glass-rgb),0.35)" }}>
+                                                {row.realEstate}
+                                            </td>
+                                            <td className="px-6 py-5 text-sm" style={{ color: "rgba(var(--glass-rgb),0.35)" }}>
+                                                {row.malls}
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
+                </FadeIn>
             </div>
         </section>
     );

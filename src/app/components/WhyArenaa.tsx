@@ -1,5 +1,7 @@
 "use client";
 
+import FadeIn from "./FadeIn";
+
 const advantages = [
     {
         icon: "trending_up",
@@ -51,7 +53,7 @@ export default function WhyArenaa() {
         <section
             id="why"
             className="py-28"
-            style={{ background: "#111111" }}
+            style={{ background: "var(--surface-dark)" }}
         >
             <div className="max-w-7xl mx-auto px-6">
                 {/* Header */}
@@ -73,7 +75,7 @@ export default function WhyArenaa() {
                         <br />
                         <span className="gradient-text">Wins.</span>
                     </h2>
-                    <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.5)" }}>
+                    <p className="text-sm leading-relaxed" style={{ color: "rgba(var(--glass-rgb),0.5)" }}>
                         ARENAA fills a clear structural gap in India&apos;s highway ecosystem with a
                         model that is replicable, scalable, and designed to out-earn alternatives
                         across every key metric.
@@ -83,108 +85,111 @@ export default function WhyArenaa() {
                 {/* Advantages grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-24">
                     {advantages.map((adv, i) => (
-                        <div
-                            key={i}
-                            className="glass-card feature-card p-8 rounded-sm group"
-                            style={{ borderColor: "rgba(255,255,255,0.06)" }}
-                        >
+                        <FadeIn key={i} delay={0.1 * i} direction="up" fullWidth>
                             <div
-                                className="w-12 h-12 rounded-sm flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110"
-                                style={{ background: "rgba(255,184,0,0.1)" }}
+                                className="glass-card feature-card p-8 rounded-sm group h-full"
+                                style={{ borderColor: "rgba(var(--glass-rgb),0.06)" }}
                             >
-                                <span
-                                    className="material-symbols-outlined text-xl"
-                                    style={{ color: "#FFB800" }}
+                                <div
+                                    className="w-12 h-12 rounded-sm flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110"
+                                    style={{ background: "rgba(255,184,0,0.1)" }}
                                 >
-                                    {adv.icon}
-                                </span>
+                                    <span
+                                        className="material-symbols-outlined text-xl"
+                                        style={{ color: "#FFB800" }}
+                                    >
+                                        {adv.icon}
+                                    </span>
+                                </div>
+                                <h3
+                                    className="font-bold uppercase tracking-wider mb-3 text-sm text-white"
+                                >
+                                    {adv.title}
+                                </h3>
+                                <p className="text-xs leading-relaxed" style={{ color: "rgba(var(--glass-rgb),0.45)" }}>
+                                    {adv.desc}
+                                </p>
                             </div>
-                            <h3
-                                className="font-bold uppercase tracking-wider mb-3 text-sm text-white"
-                            >
-                                {adv.title}
-                            </h3>
-                            <p className="text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
-                                {adv.desc}
-                            </p>
-                        </div>
+                        </FadeIn>
                     ))}
                 </div>
 
                 {/* Competitive tier ladder */}
-                <div
-                    className="rounded-sm p-10 md:p-14"
-                    style={{ background: "rgba(255,184,0,0.03)", border: "1px solid rgba(255,184,0,0.12)" }}
-                >
-                    <div className="flex flex-col lg:flex-row gap-12 items-start">
-                        <div className="lg:w-1/3">
-                            <h3
-                                className="font-black uppercase text-white mb-4 text-2xl"
-                                style={{ fontFamily: "Montserrat, sans-serif" }}
-                            >
-                                Competitive Landscape
-                            </h3>
-                            <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.45)" }}>
-                                ARENAA sits at the very top of the highway dining & leisure ecosystem,
-                                combining multi-revenue streams that no traditional format offers.
-                            </p>
-                        </div>
-
-                        <div className="lg:w-2/3 w-full space-y-4">
-                            {tiers.map((tier, i) => (
-                                <div
-                                    key={i}
-                                    className="flex items-center gap-5 p-5 rounded-sm transition-all duration-300"
-                                    style={{
-                                        background: tier.highlight
-                                            ? "rgba(255,184,0,0.08)"
-                                            : "rgba(255,255,255,0.02)",
-                                        border: `1px solid ${tier.highlight ? "rgba(255,184,0,0.3)" : "rgba(255,255,255,0.05)"}`,
-                                    }}
+                <FadeIn delay={0.2} direction="up" fullWidth>
+                    <div
+                        className="rounded-sm p-10 md:p-14"
+                        style={{ background: "rgba(255,184,0,0.03)", border: "1px solid rgba(255,184,0,0.12)" }}
+                    >
+                        <div className="flex flex-col lg:flex-row gap-12 items-start">
+                            <div className="lg:w-1/3">
+                                <h3
+                                    className="font-black uppercase text-white mb-4 text-2xl"
+                                    style={{ fontFamily: "Montserrat, sans-serif" }}
                                 >
-                                    {/* Level bar */}
-                                    <div className="flex gap-1 shrink-0">
-                                        {[1, 2, 3, 4].map((level) => (
-                                            <div
-                                                key={level}
-                                                className="w-2 h-6 rounded-sm"
-                                                style={{
-                                                    background:
-                                                        level <= tier.level
-                                                            ? tier.highlight
-                                                                ? "#FFB800"
-                                                                : "rgba(255,255,255,0.3)"
-                                                            : "rgba(255,255,255,0.06)",
-                                                }}
-                                            />
-                                        ))}
-                                    </div>
-                                    <div>
-                                        <p
-                                            className="font-bold text-sm uppercase tracking-wide"
-                                            style={{ color: tier.highlight ? "#FFB800" : "rgba(255,255,255,0.7)" }}
-                                        >
-                                            {tier.name}
-                                        </p>
-                                        <p className="text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
-                                            {tier.desc}
-                                        </p>
-                                    </div>
-                                    {tier.highlight && (
-                                        <div className="ml-auto shrink-0">
-                                            <span
-                                                className="text-[9px] font-bold tracking-widest uppercase px-3 py-1.5"
-                                                style={{ background: "#FFB800", color: "#000" }}
-                                            >
-                                                ARENAA
-                                            </span>
+                                    Competitive Landscape
+                                </h3>
+                                <p className="text-sm leading-relaxed" style={{ color: "rgba(var(--glass-rgb),0.45)" }}>
+                                    ARENAA sits at the very top of the highway dining & leisure ecosystem,
+                                    combining multi-revenue streams that no traditional format offers.
+                                </p>
+                            </div>
+
+                            <div className="lg:w-2/3 w-full space-y-4">
+                                {tiers.map((tier, i) => (
+                                    <div
+                                        key={i}
+                                        className="flex items-center gap-5 p-5 rounded-sm transition-all duration-300"
+                                        style={{
+                                            background: tier.highlight
+                                                ? "rgba(255,184,0,0.08)"
+                                                : "rgba(var(--glass-rgb),0.02)",
+                                            border: `1px solid ${tier.highlight ? "rgba(255,184,0,0.3)" : "rgba(var(--glass-rgb),0.05)"}`,
+                                        }}
+                                    >
+                                        {/* Level bar */}
+                                        <div className="flex gap-1 shrink-0">
+                                            {[1, 2, 3, 4].map((level) => (
+                                                <div
+                                                    key={level}
+                                                    className="w-2 h-6 rounded-sm"
+                                                    style={{
+                                                        background:
+                                                            level <= tier.level
+                                                                ? tier.highlight
+                                                                    ? "#FFB800"
+                                                                    : "rgba(var(--glass-rgb),0.3)"
+                                                                : "rgba(var(--glass-rgb),0.06)",
+                                                    }}
+                                                />
+                                            ))}
                                         </div>
-                                    )}
-                                </div>
-                            ))}
+                                        <div>
+                                            <p
+                                                className="font-bold text-sm uppercase tracking-wide"
+                                                style={{ color: tier.highlight ? "#FFB800" : "rgba(var(--glass-rgb),0.7)" }}
+                                            >
+                                                {tier.name}
+                                            </p>
+                                            <p className="text-xs" style={{ color: "rgba(var(--glass-rgb),0.35)" }}>
+                                                {tier.desc}
+                                            </p>
+                                        </div>
+                                        {tier.highlight && (
+                                            <div className="ml-auto shrink-0">
+                                                <span
+                                                    className="text-[9px] font-bold tracking-widest uppercase px-3 py-1.5"
+                                                    style={{ background: "#FFB800", color: "var(--text-inverse)" }}
+                                                >
+                                                    ARENAA
+                                                </span>
+                                            </div>
+                                        )}
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
-                </div>
+                </FadeIn>
             </div>
         </section>
     );

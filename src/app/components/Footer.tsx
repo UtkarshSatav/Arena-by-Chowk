@@ -3,14 +3,14 @@
 export default function Footer() {
     return (
         <footer
-            style={{ background: "#000", borderTop: "1px solid rgba(255,255,255,0.05)" }}
+            style={{ background: "var(--text-inverse)", borderTop: "1px solid rgba(var(--glass-rgb),0.05)" }}
         >
             {/* Top CTA strip */}
             <div style={{ background: "#FFB800" }}>
                 <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
                     <p
                         className="font-black uppercase text-lg"
-                        style={{ fontFamily: "Montserrat, sans-serif", color: "#000" }}
+                        style={{ fontFamily: "Montserrat, sans-serif", color: "var(--text-inverse)" }}
                     >
                         Ready to invest in India&apos;s Highway Future?
                     </p>
@@ -18,7 +18,7 @@ export default function Footer() {
                         <button
                             className="font-bold uppercase text-sm px-8 py-3 transition-all"
                             style={{
-                                background: "#000",
+                                background: "var(--text-inverse)",
                                 color: "#FFB800",
                                 border: "2px solid transparent",
                             }}
@@ -48,7 +48,7 @@ export default function Footer() {
                                 by CHOWK
                             </span>
                         </a>
-                        <p className="text-xs leading-relaxed max-w-xs" style={{ color: "rgba(255,255,255,0.4)" }}>
+                        <p className="text-xs leading-relaxed max-w-xs" style={{ color: "rgba(var(--glass-rgb),0.4)" }}>
                             India&apos;s premier integrated highway leisure destination. Food + Gaming + Leisure.
                             A structured annuity-style revenue asset for developers.
                         </p>
@@ -57,7 +57,7 @@ export default function Footer() {
                                 className="w-1.5 h-1.5 rounded-full"
                                 style={{ background: "#00F0FF", animation: "pulse 2s infinite" }}
                             />
-                            <span className="text-[9px] uppercase tracking-widest" style={{ color: "rgba(255,255,255,0.3)" }}>
+                            <span className="text-[9px] uppercase tracking-widest" style={{ color: "rgba(var(--glass-rgb),0.3)" }}>
                                 Accepting Partners 2024
                             </span>
                         </div>
@@ -82,7 +82,7 @@ export default function Footer() {
                                     <a
                                         href={link.href}
                                         className="text-xs transition-colors"
-                                        style={{ color: "rgba(255,255,255,0.45)" }}
+                                        style={{ color: "rgba(var(--glass-rgb),0.45)" }}
                                     >
                                         {link.label}
                                     </a>
@@ -110,7 +110,7 @@ export default function Footer() {
                                     <a
                                         href={link.href}
                                         className="text-xs transition-colors"
-                                        style={{ color: "rgba(255,255,255,0.45)" }}
+                                        style={{ color: "rgba(var(--glass-rgb),0.45)" }}
                                     >
                                         {link.label}
                                     </a>
@@ -141,7 +141,7 @@ export default function Footer() {
                                     >
                                         {c.icon}
                                     </span>
-                                    <span className="text-[11px]" style={{ color: "rgba(255,255,255,0.45)" }}>
+                                    <span className="text-[11px]" style={{ color: "rgba(var(--glass-rgb),0.45)" }}>
                                         {c.text}
                                     </span>
                                 </li>
@@ -153,14 +153,14 @@ export default function Footer() {
                 {/* Divider */}
                 <div
                     className="border-t mb-8"
-                    style={{ borderColor: "rgba(255,255,255,0.05)" }}
+                    style={{ borderColor: "rgba(var(--glass-rgb),0.05)" }}
                 />
 
                 {/* Bottom bar */}
                 <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                     <p
                         className="text-[10px] uppercase tracking-widest"
-                        style={{ color: "rgba(255,255,255,0.25)" }}
+                        style={{ color: "rgba(var(--glass-rgb),0.25)" }}
                     >
                         © 2024 ARENAA by Chowk Entertainment Pvt. Ltd. All Rights Reserved.
                     </p>
@@ -175,7 +175,7 @@ export default function Footer() {
                                 href="#"
                                 aria-label={s.label}
                                 className="transition-colors"
-                                style={{ color: "rgba(255,255,255,0.25)" }}
+                                style={{ color: "rgba(var(--glass-rgb),0.25)" }}
                             >
                                 <span className="material-symbols-outlined text-xl">{s.icon}</span>
                             </a>
