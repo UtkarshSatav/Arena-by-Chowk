@@ -1,300 +1,184 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import FadeIn from "./FadeIn";
 
-export default function InvestSection() {
-    const [form, setForm] = useState({
-        name: "",
-        phone: "",
-        email: "",
-        message: "",
-        interest: "land-owner",
-    });
-    const [submitted, setSubmitted] = useState(false);
+const partnerTypes = [
+    {
+        title: "Land Owner",
+        icon: "landscape",
+        description: "Owns property on high-traffic highway corridors or urban lifestyle hubs.",
+        benefit: "High-yield long-term revenue share & site premiumization.",
+    },
+    {
+        title: "Developer / Builder",
+        icon: "apartment",
+        description: "Executing large-scale infrastructure projects or commercial complexes.",
+        benefit: "Integration of ARENAA as a signature lifestyle anchor component.",
+    },
+    {
+        title: "Institutional Investor",
+        icon: "account_balance",
+        description: "Looking for stable, high-ROI assets in the leisure infrastructure sector.",
+        benefit: "Scalable investment model with expert operational management.",
+    },
+];
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        setForm({ ...form, [e.target.name]: e.target.value });
-    };
+export default function InvestSection() {
+    const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success">("idle");
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        setSubmitted(true);
+        setFormStatus("submitting");
+        setTimeout(() => setFormStatus("success"), 1500);
     };
 
     return (
         <section
-            id="invest"
+            id="partner"
             className="py-28 relative overflow-hidden"
             style={{ background: "var(--bg-color)" }}
         >
-            {/* Background glow */}
-            <div
-                className="absolute top-0 right-0 w-[700px] h-[700px] rounded-full pointer-events-none"
-                style={{
-                    background: "radial-gradient(circle, rgba(255,184,0,0.06) 0%, transparent 60%)",
-                    filter: "blur(80px)",
-                    transform: "translate(30%, -30%)",
-                }}
-            />
+            <div className="absolute inset-0 z-0">
+                <Image
+                    src="/render_ext.jpg"
+                    alt="ARENAA Exterior Night"
+                    fill
+                    className="object-cover opacity-20"
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black/95" />
+            </div>
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
-                <div className="flex flex-col lg:flex-row gap-16 items-start">
-                    {/* Left: Info */}
-                    <div className="lg:w-1/2">
-                        <FadeIn delay={0.2} direction="right" fullWidth>
-                            <div className="flex items-center gap-3 mb-5">
-                                <span className="h-px w-10" style={{ background: "#FFB800" }} />
-                                <span className="text-[10px] font-bold tracking-[0.4em] uppercase" style={{ color: "#FFB800" }}>
-                                    Partner With ARENAA
-                                </span>
-                            </div>
-                            <h2
-                                className="font-black uppercase leading-[0.9] mb-6"
-                                style={{
-                                    fontFamily: "Montserrat, sans-serif",
-                                    fontSize: "clamp(32px, 5vw, 56px)",
-                                }}
-                            >
-                                <span className="text-white">Own The</span>
-                                <br />
-                                <span className="gradient-text">Highway.</span>
-                                <br />
-                                <span className="text-white text-[0.85em]">Secure The Returns.</span>
-                            </h2>
-                            <p
-                                className="text-sm leading-relaxed mb-10"
-                                style={{ color: "rgba(var(--glass-rgb),0.5)" }}
-                            >
-                                Whether you&apos;re a landowner, developer, or institutional investor — ARENAA offers a
-                                structured annuity-style leisure asset with high visibility, strong footfall guarantee,
-                                and proven revenue model. Let&apos;s build India&apos;s highways together.
-                            </p>
+                <div className="text-center mb-24">
+                    <div className="inline-flex items-center gap-3 mb-5">
+                        <span className="h-px w-8" style={{ background: "#FFB800" }} />
+                        <span className="text-[10px] font-bold tracking-[0.4em] uppercase" style={{ color: "#FFB800" }}>
+                            Partner With Us
+                        </span>
+                        <span className="h-px w-8" style={{ background: "#FFB800" }} />
+                    </div>
+                    <h2
+                        className="font-black uppercase text-white leading-tight"
+                        style={{
+                            fontFamily: "Montserrat, sans-serif",
+                            fontSize: "clamp(32px, 5vw, 60px)",
+                        }}
+                    >
+                        Own The Highway.
+                        <br />
+                        <span className="gradient-text">Secure The Returns.</span>
+                    </h2>
+                </div>
 
-                            {/* Partner types */}
-                            <div className="space-y-4 mb-10">
-                                {[
-                                    {
-                                        type: "Land Owner",
-                                        desc: "Offer your highway land — ARENAA handles operations & returns 15% gross revenue",
-                                        icon: "landscape",
-                                    },
-                                    {
-                                        type: "Developer / Builder",
-                                        desc: "Co-develop an ARENAA facility with guaranteed revenue share model",
-                                        icon: "apartment",
-                                    },
-                                    {
-                                        type: "Institutional Investor",
-                                        desc: "Invest in a structured highway leisure infrastructure asset",
-                                        icon: "account_balance",
-                                    },
-                                ].map((p, i) => (
-                                    <div
-                                        key={i}
-                                        className="flex items-start gap-4 p-5 rounded-sm"
-                                        style={{
-                                            background: "rgba(var(--glass-rgb),0.025)",
-                                            border: "1px solid rgba(var(--glass-rgb),0.06)",
-                                        }}
-                                    >
-                                        <div
-                                            className="w-10 h-10 shrink-0 rounded-sm flex items-center justify-center"
-                                            style={{ background: "rgba(255,184,0,0.1)" }}
-                                        >
-                                            <span className="material-symbols-outlined text-base" style={{ color: "#FFB800" }}>
-                                                {p.icon}
-                                            </span>
-                                        </div>
-                                        <div>
-                                            <p className="text-sm font-bold text-white mb-1 uppercase tracking-wider">
-                                                {p.type}
-                                            </p>
-                                            <p className="text-xs" style={{ color: "rgba(var(--glass-rgb),0.45)" }}>
-                                                {p.desc}
-                                            </p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-
-                            {/* Contact details */}
-                            <div className="space-y-3">
-                                {[
-                                    { icon: "mail", text: "invest@arenaa-chowk.com" },
-                                    { icon: "phone", text: "+91 9876 543 210" },
-                                    { icon: "location_on", text: "Chowk Entertainment Pvt. Ltd., Mumbai" },
-                                ].map((c, i) => (
-                                    <div key={i} className="flex items-center gap-3">
-                                        <span className="material-symbols-outlined text-lg" style={{ color: "#FFB800" }}>
-                                            {c.icon}
-                                        </span>
-                                        <span className="text-sm" style={{ color: "rgba(var(--glass-rgb),0.6)" }}>
-                                            {c.text}
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
+                    {/* Left: Partner Types */}
+                    <div className="lg:col-span-12 grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+                        {partnerTypes.map((type, i) => (
+                            <FadeIn key={i} delay={0.2 * i} direction="up" fullWidth>
+                                <div className="glass-card feature-card p-10 h-full border-white/5 bg-white/[0.02] flex flex-col gap-6 group hover:border-[#FFB800]/30 transition-all duration-500">
+                                    <div className="w-14 h-14 rounded-sm flex items-center justify-center border border-white/10 group-hover:border-[#FFB800]/50 transition-all">
+                                        <span className="material-symbols-outlined text-2xl text-[#FFB800]">
+                                            {type.icon}
                                         </span>
                                     </div>
-                                ))}
-                            </div>
-                        </FadeIn>
+                                    <h3 className="text-xl font-black text-white uppercase" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                                        {type.title}
+                                    </h3>
+                                    <p className="text-sm text-white/50 leading-relaxed">
+                                        {type.description}
+                                    </p>
+                                    <div className="mt-auto pt-6 border-t border-white/5">
+                                        <p className="text-[10px] font-bold uppercase tracking-widest text-[#FFB800] mb-2">Benefit</p>
+                                        <p className="text-xs font-bold text-white/70">{type.benefit}</p>
+                                    </div>
+                                </div>
+                            </FadeIn>
+                        ))}
                     </div>
 
-                    {/* Right: Form */}
-                    <div className="lg:w-1/2 w-full">
-                        <FadeIn delay={0.4} direction="left" fullWidth>
-                            <div
-                                className="glass-card rounded-sm p-10"
-                                style={{ borderColor: "rgba(255,184,0,0.15)" }}
-                            >
-                                {!submitted ? (
-                                    <>
-                                        <h3
-                                            className="font-bold uppercase tracking-wider text-white mb-2 text-lg"
-                                            style={{ fontFamily: "Montserrat, sans-serif" }}
-                                        >
-                                            Express Interest
-                                        </h3>
-                                        <p className="text-[11px] mb-8" style={{ color: "rgba(var(--glass-rgb),0.4)" }}>
-                                            Share your details and the ARENAA team will reach out within 48 hours.
-                                        </p>
-
-                                        <form onSubmit={handleSubmit} className="space-y-5">
-                                            <div>
-                                                <label className="block text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: "rgba(var(--glass-rgb),0.5)" }}>
-                                                    Full Name *
-                                                </label>
-                                                <input
-                                                    name="name"
-                                                    type="text"
-                                                    required
-                                                    value={form.name}
-                                                    onChange={handleChange}
-                                                    placeholder="Your full name"
-                                                    className="w-full px-4 py-3.5 text-sm text-white placeholder-white/20 outline-none transition-all focus:border-amber-500"
-                                                    style={{
-                                                        background: "rgba(var(--glass-rgb),0.04)",
-                                                        border: "1px solid rgba(var(--glass-rgb),0.1)",
-                                                        borderRadius: "2px",
-                                                    }}
-                                                />
-                                            </div>
-
-                                            <div className="grid grid-cols-2 gap-4">
-                                                <div>
-                                                    <label className="block text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: "rgba(var(--glass-rgb),0.5)" }}>
-                                                        Phone *
-                                                    </label>
-                                                    <input
-                                                        name="phone"
-                                                        type="tel"
-                                                        required
-                                                        value={form.phone}
-                                                        onChange={handleChange}
-                                                        placeholder="+91 XXXXX XXXXX"
-                                                        className="w-full px-4 py-3.5 text-sm text-white placeholder-white/20 outline-none"
-                                                        style={{
-                                                            background: "rgba(var(--glass-rgb),0.04)",
-                                                            border: "1px solid rgba(var(--glass-rgb),0.1)",
-                                                            borderRadius: "2px",
-                                                        }}
-                                                    />
-                                                </div>
-                                                <div>
-                                                    <label className="block text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: "rgba(var(--glass-rgb),0.5)" }}>
-                                                        Email *
-                                                    </label>
-                                                    <input
-                                                        name="email"
-                                                        type="email"
-                                                        required
-                                                        value={form.email}
-                                                        onChange={handleChange}
-                                                        placeholder="your@email.com"
-                                                        className="w-full px-4 py-3.5 text-sm text-white placeholder-white/20 outline-none"
-                                                        style={{
-                                                            background: "rgba(var(--glass-rgb),0.04)",
-                                                            border: "1px solid rgba(var(--glass-rgb),0.1)",
-                                                            borderRadius: "2px",
-                                                        }}
-                                                    />
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                                <label className="block text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: "rgba(var(--glass-rgb),0.5)" }}>
-                                                    I am a...
-                                                </label>
-                                                <select
-                                                    name="interest"
-                                                    value={form.interest}
-                                                    onChange={handleChange}
-                                                    className="w-full px-4 py-3.5 text-sm text-white outline-none"
-                                                    style={{
-                                                        background: "var(--surface-dark)",
-                                                        border: "1px solid rgba(var(--glass-rgb),0.1)",
-                                                        borderRadius: "2px",
-                                                    }}
-                                                >
-                                                    <option value="land-owner">Land Owner / Lessor</option>
-                                                    <option value="developer">Developer / Builder</option>
-                                                    <option value="investor">Institutional Investor</option>
-                                                    <option value="other">Other / General Enquiry</option>
-                                                </select>
-                                            </div>
-
-                                            <div>
-                                                <label className="block text-[10px] font-bold uppercase tracking-widest mb-2" style={{ color: "rgba(var(--glass-rgb),0.5)" }}>
-                                                    Message
-                                                </label>
-                                                <textarea
-                                                    name="message"
-                                                    value={form.message}
-                                                    onChange={handleChange}
-                                                    placeholder="Tell us about your land / project..."
-                                                    rows={4}
-                                                    className="w-full px-4 py-3.5 text-sm text-white placeholder-white/20 outline-none resize-none"
-                                                    style={{
-                                                        background: "rgba(var(--glass-rgb),0.04)",
-                                                        border: "1px solid rgba(var(--glass-rgb),0.1)",
-                                                        borderRadius: "2px",
-                                                    }}
-                                                />
-                                            </div>
-
-                                            <button type="submit" className="btn-primary w-full rounded-sm py-4 flex items-center justify-center gap-2">
-                                                <span>Submit Enquiry</span>
-                                                <span className="material-symbols-outlined text-lg">arrow_forward</span>
-                                            </button>
-
-                                            <p className="text-[10px] text-center" style={{ color: "rgba(var(--glass-rgb),0.3)" }}>
-                                                Your information is confidential and will not be shared with third parties.
-                                            </p>
-                                        </form>
-                                    </>
-                                ) : (
-                                    <div className="text-center py-10">
-                                        <div
-                                            className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6"
-                                            style={{ background: "rgba(255,184,0,0.1)", border: "2px solid #FFB800" }}
-                                        >
-                                            <span className="material-symbols-outlined text-4xl" style={{ color: "#FFB800" }}>
-                                                check_circle
-                                            </span>
+                    {/* Right: Contact Form (Full Width) */}
+                    <FadeIn delay={0.6} direction="up" fullWidth className="lg:col-span-12">
+                        <div className="glass-card p-10 lg:p-16 border-[#FFB800]/20 bg-black/40 relative">
+                            <div className="max-w-3xl mx-auto">
+                                <h3 className="text-3xl font-black text-white uppercase mb-8 text-center" style={{ fontFamily: "Montserrat, sans-serif" }}>
+                                    Strategic Inquiry
+                                </h3>
+                                
+                                {formStatus === "success" ? (
+                                    <div className="py-20 text-center animate-in fade-in zoom-in duration-500">
+                                        <div className="w-20 h-20 bg-[#FFB800]/20 rounded-full flex items-center justify-center mx-auto mb-8 border border-[#FFB800]/50">
+                                            <span className="material-symbols-outlined text-[#FFB800] text-4xl">check</span>
                                         </div>
-                                        <h3
-                                            className="font-bold uppercase text-white text-xl mb-3"
-                                            style={{ fontFamily: "Montserrat, sans-serif" }}
+                                        <h4 className="text-2xl font-black text-white uppercase mb-4">Request Received</h4>
+                                        <p className="text-white/50">Our partnership team will get in touch shortly.</p>
+                                        <button 
+                                            onClick={() => setFormStatus("idle")}
+                                            className="mt-10 text-[10px] font-bold uppercase tracking-widest text-[#FFB800] hover:underline"
                                         >
-                                            Enquiry Received!
-                                        </h3>
-                                        <p className="text-sm" style={{ color: "rgba(var(--glass-rgb),0.5)" }}>
-                                            Thank you, <strong className="text-white">{form.name}</strong>. The ARENAA
-                                            investment team will contact you at {form.email} within 48 hours.
-                                        </p>
+                                            Submit Another Inquiry
+                                        </button>
                                     </div>
+                                ) : (
+                                    <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <div className="space-y-2">
+                                            <label className="text-[10px] font-bold uppercase tracking-widest text-white/40">Full Name</label>
+                                            <input
+                                                type="text"
+                                                required
+                                                className="w-full bg-white/5 border border-white/10 p-5 text-white focus:outline-none focus:border-[#FFB800] transition-colors rounded-sm"
+                                                placeholder="Enter your name"
+                                            />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="text-[10px] font-bold uppercase tracking-widest text-white/40">Email Address</label>
+                                            <input
+                                                type="email"
+                                                required
+                                                className="w-full bg-white/5 border border-white/10 p-5 text-white focus:outline-none focus:border-[#FFB800] transition-colors rounded-sm"
+                                                placeholder="email@example.com"
+                                            />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="text-[10px] font-bold uppercase tracking-widest text-white/40">Phone Number</label>
+                                            <input
+                                                type="tel"
+                                                required
+                                                className="w-full bg-white/5 border border-white/10 p-5 text-white focus:outline-none focus:border-[#FFB800] transition-colors rounded-sm"
+                                                placeholder="+91"
+                                            />
+                                        </div>
+                                        <div className="space-y-2">
+                                            <label className="text-[10px] font-bold uppercase tracking-widest text-white/40">Partner Type</label>
+                                            <select className="w-full bg-white/5 border border-white/10 p-5 text-white focus:outline-none focus:border-[#FFB800] transition-colors rounded-sm appearance-none">
+                                                <option className="bg-black">Land Owner</option>
+                                                <option className="bg-black">Developer / Builder</option>
+                                                <option className="bg-black">Institutional Investor</option>
+                                            </select>
+                                        </div>
+                                        <div className="md:col-span-2 space-y-2">
+                                            <label className="text-[10px] font-bold uppercase tracking-widest text-white/40">Message / Location Interest</label>
+                                            <textarea
+                                                rows={4}
+                                                className="w-full bg-white/5 border border-white/10 p-5 text-white focus:outline-none focus:border-[#FFB800] transition-colors rounded-sm resize-none"
+                                                placeholder="Tell us about your property or investment interest..."
+                                            />
+                                        </div>
+                                        <div className="md:col-span-2 text-center pt-6">
+                                            <button
+                                                type="submit"
+                                                disabled={formStatus === "submitting"}
+                                                className="btn-primary rounded-sm px-16 py-6 text-xs font-black tracking-widest uppercase disabled:opacity-50"
+                                            >
+                                                {formStatus === "submitting" ? "Processing..." : "Submit Inquiry →"}
+                                            </button>
+                                        </div>
+                                    </form>
                                 )}
                             </div>
-                        </FadeIn>
-                    </div>
+                        </div>
+                    </FadeIn>
                 </div>
             </div>
         </section>

@@ -5,9 +5,9 @@ import FadeIn from "./FadeIn";
 
 const experiences = [
     {
-        image: "/gaming.png",
-        tag: "Entertainment",
-        title: "Game Zone",
+        image: "/gaming_arcade.jpg", // New arcade image
+        tag: "Play",
+        title: "Gaming & Entertainment",
         sub: "The High-Margin Anchor",
         desc: "Arcade + VR + skill-based games. Ticket-based & digital payments. Low working capital, high margin model designed to maximise dwell time and per-visit revenue.",
         highlights: [
@@ -16,14 +16,12 @@ const experiences = [
             { icon: "sports_esports", text: "Skill-Based Games" },
             { icon: "payments", text: "NFC/Digital Payments" },
         ],
-        revenue: "₹46.5L",
-        revenueLabel: "Monthly Est.",
         accent: "#00F0FF",
         side: "left",
     },
     {
         image: "/foodcourt.png",
-        tag: "Dining",
+        tag: "Eat",
         title: "Food Court",
         sub: "The High-Volume Engine",
         desc: "A centralized kitchen with semi-circular high-efficiency service counter offering multi-cuisine fast-turnover dishes at value pricing. Alcohol-free, family-friendly, hygienic.",
@@ -33,25 +31,21 @@ const experiences = [
             { icon: "people", text: "350+ Capacity" },
             { icon: "attach_money", text: "Value Pricing" },
         ],
-        revenue: "₹95.9L",
-        revenueLabel: "Monthly Est.",
         accent: "#FFB800",
         side: "right",
     },
     {
         image: "/landscape.png",
-        tag: "Leisure",
-        title: "Open Leisure Spaces",
-        sub: "The Differentiator",
-        desc: "Landscaped outdoor zones providing a unique rest and recreation environment that converts a functional highway stop into a memorable destination experience for families.",
+        tag: "Experience",
+        title: "The Concept",
+        sub: "Designed for Modern Living",
+        desc: "Integrated highway leisure and lifestyle destination. Positioned as a destination-driven stop where travelers choose to come, not just pass through.",
         highlights: [
             { icon: "park", text: "Landscaped Gardens" },
-            { icon: "family_restroom", text: "Family Zones" },
-            { icon: "outdoor_grill", text: "Outdoor Seating" },
-            { icon: "star", text: "Premium Experience" },
+            { icon: "family_restroom", text: "Social Hub" },
+            { icon: "explore", text: "Destination Stops" },
+            { icon: "hiking", text: "Modern Travel" },
         ],
-        revenue: "1–1.5 Ac",
-        revenueLabel: "Land Requirement",
         accent: "#4ADE80",
         side: "left",
     },
@@ -66,30 +60,29 @@ export default function Experience() {
         >
             <div className="max-w-7xl mx-auto px-6">
                 {/* Header */}
-                <div className="text-center mb-20">
+                <div className="text-center mb-24">
                     <div className="inline-flex items-center gap-3 mb-5">
                         <span className="h-px w-8" style={{ background: "#FFB800" }} />
                         <span className="text-[10px] font-bold tracking-[0.4em] uppercase" style={{ color: "#FFB800" }}>
-                            The ARENAA Experience
+                            Experiences
                         </span>
                         <span className="h-px w-8" style={{ background: "#FFB800" }} />
                     </div>
                     <h2
-                        className="font-black uppercase text-white"
+                        className="font-black uppercase text-white leading-none"
                         style={{
                             fontFamily: "Montserrat, sans-serif",
-                            fontSize: "clamp(32px, 5vw, 56px)",
-                            lineHeight: "0.95",
+                            fontSize: "clamp(40px, 6vw, 80px)",
                         }}
                     >
-                        Three Experiences.
+                        Eat • Play
                         <br />
-                        <span className="gradient-text">One Destination.</span>
+                        <span className="gradient-text italic">Celebrate.</span>
                     </h2>
                 </div>
 
                 {/* Experience blocks */}
-                <div className="space-y-24">
+                <div className="space-y-32">
                     {experiences.map((exp, i) => (
                         <FadeIn key={i} delay={0.2} direction="up" fullWidth>
                             <div
@@ -99,10 +92,10 @@ export default function Experience() {
                                 {/* Image */}
                                 <div className="w-full lg:w-1/2 relative">
                                     <div
-                                        className="relative overflow-hidden rounded-sm"
+                                        className="relative overflow-hidden rounded-sm group img-hud-outer"
                                         style={{
                                             border: `1px solid ${exp.accent}25`,
-                                            boxShadow: `0 0 60px ${exp.accent}15`,
+                                            boxShadow: `0 20px 80px -20px ${exp.accent}15`,
                                         }}
                                     >
                                         <Image
@@ -110,7 +103,7 @@ export default function Experience() {
                                             alt={exp.title}
                                             width={800}
                                             height={500}
-                                            className="w-full h-72 lg:h-96 object-cover img-hover"
+                                            className="w-full h-80 lg:h-[450px] object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
                                         {/* Overlay tag */}
                                         <div className="absolute top-5 left-5">
@@ -124,53 +117,30 @@ export default function Experience() {
                                                 {exp.tag}
                                             </span>
                                         </div>
-                                        {/* Revenue badge */}
-                                        <div
-                                            className="absolute bottom-5 right-5 hud-border px-5 py-3"
-                                            style={{
-                                                background: "rgba(var(--inverse-glass-rgb),0.7)",
-                                                backdropFilter: "blur(10px)",
-                                                borderColor: `${exp.accent}50`,
-                                            }}
-                                        >
-                                            <p
-                                                className="stat-number text-xl"
-                                                style={{ color: exp.accent }}
-                                            >
-                                                {exp.revenue}
-                                            </p>
-                                            <p
-                                                className="text-[9px] uppercase tracking-widest"
-                                                style={{ color: "rgba(var(--glass-rgb),0.4)" }}
-                                            >
-                                                {exp.revenueLabel}
-                                            </p>
-                                        </div>
                                     </div>
                                 </div>
 
                                 {/* Content */}
                                 <div className="w-full lg:w-1/2">
                                     <p
-                                        className="text-[9px] font-bold tracking-[0.4em] uppercase mb-3"
+                                        className="text-[10px] font-bold tracking-[0.4em] uppercase mb-4"
                                         style={{ color: exp.accent }}
                                     >
                                         {exp.sub}
                                     </p>
                                     <h3
-                                        className="font-black uppercase mb-5"
+                                        className="font-black uppercase mb-6 leading-tight"
                                         style={{
                                             fontFamily: "Montserrat, sans-serif",
-                                            fontSize: "clamp(28px, 3.5vw, 44px)",
+                                            fontSize: "clamp(32px, 4vw, 48px)",
                                             color: "var(--text-main)",
-                                            lineHeight: "1",
                                         }}
                                     >
                                         {exp.title}
                                     </h3>
                                     <p
-                                        className="text-sm leading-relaxed mb-10"
-                                        style={{ color: "rgba(var(--glass-rgb),0.5)" }}
+                                        className="text-base leading-relaxed mb-10"
+                                        style={{ color: "rgba(var(--glass-rgb),0.65)" }}
                                     >
                                         {exp.desc}
                                     </p>
@@ -189,7 +159,7 @@ export default function Experience() {
                                                 >
                                                     {h.icon}
                                                 </span>
-                                                <span className="text-xs font-medium" style={{ color: "rgba(var(--glass-rgb),0.7)" }}>
+                                                <span className="text-xs font-bold tracking-wide uppercase" style={{ color: "rgba(var(--glass-rgb),0.7)" }}>
                                                     {h.text}
                                                 </span>
                                             </div>

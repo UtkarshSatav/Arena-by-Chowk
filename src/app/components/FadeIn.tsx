@@ -8,6 +8,7 @@ interface FadeInProps {
     delay?: number;
     direction?: "up" | "down" | "left" | "right" | "none";
     fullWidth?: boolean;
+    className?: string;
 }
 
 export default function FadeIn({
@@ -15,6 +16,7 @@ export default function FadeIn({
     delay = 0,
     direction = "up",
     fullWidth = false,
+    className = "",
 }: FadeInProps) {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, margin: "-10%" });
@@ -46,6 +48,7 @@ export default function FadeIn({
             animate={isInView ? "visible" : "hidden"}
             transition={{ duration: 0.8, delay: delay, ease: [0.21, 0.47, 0.32, 0.98] }}
             style={{ width: fullWidth ? "100%" : "auto" }}
+            className={className}
         >
             {children}
         </motion.div>
