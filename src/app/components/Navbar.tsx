@@ -3,18 +3,20 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About ARENAA" },
-    { href: "#concept", label: "The Concept" },
-    { href: "#experience", label: "Experiences" },
-    { href: "#govindam", label: "Govindam" },
-    { href: "#partner", label: "Partner With Us" },
-    { href: "#contact", label: "Contact" },
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About" },
+    { href: "/concept", label: "The Concept" },
+    { href: "/experiences", label: "Experiences" },
+    { href: "/model", label: "Model" },
+    { href: "/partner", label: "Partner" },
+    { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
+    const pathname = usePathname();
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -62,19 +64,21 @@ export default function Navbar() {
                 {/* Desktop Nav */}
                 <div className="hidden lg:flex items-center gap-10">
                     {navLinks.map((link) => (
-                        <a
+                        <Link
                             key={link.href}
                             href={link.href}
-                            className="text-[10px] uppercase font-bold tracking-[0.25em] text-white/50 hover:text-[#FFB800] transition-colors"
+                            className={`text-[10px] uppercase font-bold tracking-[0.25em] transition-colors ${
+                                pathname === link.href ? "text-[#FFB800]" : "text-white/50 hover:text-[#FFB800]"
+                            }`}
                         >
                             {link.label}
-                        </a>
+                        </Link>
                     ))}
-                    <a href="#partner">
+                    <Link href="/partner">
                         <button className="btn-primary rounded-sm px-6 py-2.5 text-[10px] font-black tracking-widest uppercase">
                             Partner →
                         </button>
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Mobile Menu Toggle */}
@@ -88,7 +92,6 @@ export default function Navbar() {
                 </button>
             </div>
 
-            {/* Mobile Menu */}
             <div
                 className={`lg:hidden absolute top-full left-0 w-full bg-black/95 backdrop-blur-2xl border-b border-white/10 transition-all duration-500 overflow-hidden ${
                     mobileMenuOpen ? "max-h-[500px] py-10 opacity-100" : "max-h-0 py-0 opacity-0"
@@ -96,20 +99,22 @@ export default function Navbar() {
             >
                 <div className="flex flex-col items-center gap-8">
                     {navLinks.map((link) => (
-                        <a
+                        <Link
                             key={link.href}
                             href={link.href}
-                            className="text-xs uppercase font-bold tracking-[0.4em] text-white"
+                            className={`text-xs uppercase font-bold tracking-[0.4em] transition-colors ${
+                                pathname === link.href ? "text-[#FFB800]" : "text-white"
+                            }`}
                             onClick={() => setMobileMenuOpen(false)}
                         >
                             {link.label}
-                        </a>
+                        </Link>
                     ))}
-                    <a href="#partner" onClick={() => setMobileMenuOpen(false)}>
+                    <Link href="/partner" onClick={() => setMobileMenuOpen(false)}>
                         <button className="btn-primary rounded-sm px-10 py-4 text-xs font-black tracking-[0.2em] uppercase">
                             Partner With Us
                         </button>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </nav>

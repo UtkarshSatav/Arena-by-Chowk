@@ -24,11 +24,11 @@ export default function Footer() {
                             Join ARENAA as a Strategic Partner Today
                         </p>
                     </div>
-                    <a href="#partner">
+                    <Link href="/partner">
                         <button className="btn-primary rounded-sm px-12 py-6 text-xs font-black tracking-widest uppercase hover:scale-105 transition-transform group">
                             Partner With Us
                         </button>
-                    </a>
+                    </Link>
                 </div>
             </div>
 
@@ -74,18 +74,22 @@ export default function Footer() {
                             Explore
                         </h4>
                         <ul className="space-y-4">
-                            {["Home", "About ARENAA", "The Concept", "Experiences", "Govindam"].map(
-                                (link, i) => (
-                                    <li key={i}>
-                                        <a
-                                            href={`#${link.toLowerCase().replace(/\s+/g, "")}`}
-                                            className="text-xs uppercase font-bold tracking-widest text-white/50 hover:text-[#FFB800] transition-colors"
-                                        >
-                                            {link}
-                                        </a>
-                                    </li>
-                                )
-                            )}
+                            {[
+                                { label: "Home", href: "/" },
+                                { label: "About ARENAA", href: "/about" },
+                                { label: "The Concept", href: "/concept" },
+                                { label: "Experiences", href: "/experiences" },
+                                { label: "Model", href: "/model" },
+                            ].map((link, i) => (
+                                <li key={i}>
+                                    <Link
+                                        href={link.href}
+                                        className="text-xs uppercase font-bold tracking-widest text-white/50 hover:text-[#FFB800] transition-colors"
+                                    >
+                                        {link.label}
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
 
@@ -96,19 +100,19 @@ export default function Footer() {
                         </h4>
                         <ul className="space-y-4">
                             {[
-                                { label: "Partner Program", href: "#partner" },
-                                { label: "Highway Model", href: "#concept" },
-                                { label: "Architecture", href: "#concept" },
-                                { label: "Investment", href: "#partner" },
-                                { label: "Contact", href: "#contact" },
+                                { label: "Partner Program", href: "/partner" },
+                                { label: "Highway Model", href: "/model" },
+                                { label: "Architecture", href: "/model" },
+                                { label: "Investment", href: "/partner" },
+                                { label: "Contact", href: "/contact" },
                             ].map((link, i) => (
                                 <li key={i}>
-                                    <a
+                                    <Link
                                         href={link.href}
                                         className="text-xs uppercase font-bold tracking-widest text-white/50 hover:text-[#FFB800] transition-colors"
                                     >
                                         {link.label}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
