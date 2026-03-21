@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, ChangeEvent, FormEvent } from "react";
 import Image from "next/image";
 import FadeIn from "./FadeIn";
 
@@ -28,10 +28,51 @@ const partnerTypes = [
 export default function InvestSection() {
     const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success">("idle");
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        partnerType: "Land Owner",
+        message: "",
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({ ...prev, [name]: value }));
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setFormStatus("submitting");
-        setTimeout(() => setFormStatus("success"), 1500);
+
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setFormStatus("success");
+                setFormData({
+                    name: "",
+                    email: "",
+                    phone: "",
+                    partnerType: "Land Owner",
+                    message: "",
+                });
+            } else {
+                const errorData = await response.json();
+                console.error("Form submission failed:", errorData.error);
+                setFormStatus("idle");
+                // You might want to show an error message to the user here
+            }
+        } catch (error) {
+            console.error("Error submitting form:", error);
+            setFormStatus("idle");
+        }
     };
 
     return (
@@ -126,6 +167,9 @@ export default function InvestSection() {
                                             <label className="text-[10px] font-bold uppercase tracking-widest text-white/40">Full Name</label>
                                             <input
                                                 type="text"
+                                                name="name"
+                                                value={formData.name}
+                                                onChange={handleChange}
                                                 required
                                                 className="w-full bg-white/5 border border-white/10 p-5 text-white focus:outline-none focus:border-[#FFB800] transition-colors rounded-sm"
                                                 placeholder="Enter your name"
@@ -135,6 +179,9 @@ export default function InvestSection() {
                                             <label className="text-[10px] font-bold uppercase tracking-widest text-white/40">Email Address</label>
                                             <input
                                                 type="email"
+                                                name="email"
+                                                value={formData.email}
+                                                onChange={handleChange}
                                                 required
                                                 className="w-full bg-white/5 border border-white/10 p-5 text-white focus:outline-none focus:border-[#FFB800] transition-colors rounded-sm"
                                                 placeholder="email@example.com"
@@ -144,6 +191,9 @@ export default function InvestSection() {
                                             <label className="text-[10px] font-bold uppercase tracking-widest text-white/40">Phone Number</label>
                                             <input
                                                 type="tel"
+                                                name="phone"
+                                                value={formData.phone}
+                                                onChange={handleChange}
                                                 required
                                                 className="w-full bg-white/5 border border-white/10 p-5 text-white focus:outline-none focus:border-[#FFB800] transition-colors rounded-sm"
                                                 placeholder="+91"
@@ -151,7 +201,12 @@ export default function InvestSection() {
                                         </div>
                                         <div className="space-y-2">
                                             <label className="text-[10px] font-bold uppercase tracking-widest text-white/40">Partner Type</label>
-                                            <select className="w-full bg-white/5 border border-white/10 p-5 text-white focus:outline-none focus:border-[#FFB800] transition-colors rounded-sm appearance-none">
+                                            <select 
+                                                name="partnerType"
+                                                value={formData.partnerType}
+                                                onChange={handleChange}
+                                                className="w-full bg-white/5 border border-white/10 p-5 text-white focus:outline-none focus:border-[#FFB800] transition-colors rounded-sm appearance-none"
+                                            >
                                                 <option className="bg-black">Land Owner</option>
                                                 <option className="bg-black">Developer / Builder</option>
                                                 <option className="bg-black">Institutional Investor</option>
@@ -160,6 +215,9 @@ export default function InvestSection() {
                                         <div className="md:col-span-2 space-y-2">
                                             <label className="text-[10px] font-bold uppercase tracking-widest text-white/40">Message / Location Interest</label>
                                             <textarea
+                                                name="message"
+                                                value={formData.message}
+                                                onChange={handleChange}
                                                 rows={4}
                                                 className="w-full bg-white/5 border border-white/10 p-5 text-white focus:outline-none focus:border-[#FFB800] transition-colors rounded-sm resize-none"
                                                 placeholder="Tell us about your property or investment interest..."
