@@ -39,7 +39,7 @@ export default function Navbar() {
                 <Link href="/" className="group flex items-center">
                     <div className="relative w-20 h-12 overflow-hidden rounded-sm border border-white/20 transition-transform duration-300 group-hover:scale-110">
                         <Image
-                            src="/govindam_dish.jpg"
+                            src="/logo_round.jpg"
                             alt="ARENAA Logo"
                             fill
                             className="object-cover"
