@@ -6,22 +6,22 @@ import FadeIn from "./FadeIn";
 
 const partnerTypes = [
     {
-        title: "Land Owner",
+        title: "Developers & Landowners",
         icon: "landscape",
-        description: "Owns property on high-traffic highway corridors or urban lifestyle hubs.",
-        benefit: "High-yield long-term revenue share & site premiumization.",
+        description: "Transform high-potential locations into vibrant lifestyle destinations. Our integrated model helps maximise land value while creating long-term visitor engagement.",
+        benefit: "Destination concept design, brand expertise, and full operational support.",
     },
     {
-        title: "Developer / Builder",
-        icon: "apartment",
-        description: "Executing large-scale infrastructure projects or commercial complexes.",
-        benefit: "Integration of ARENAA as a signature lifestyle anchor component.",
+        title: "Franchise Partners",
+        icon: "storefront",
+        description: "ARENAA is designed as a scalable destination platform with the potential to expand across multiple locations.",
+        benefit: "Scalable model designed for replication across highways and lifestyle hubs.",
     },
     {
-        title: "Institutional Investor",
-        icon: "account_balance",
-        description: "Looking for stable, high-ROI assets in the leisure infrastructure sector.",
-        benefit: "Scalable investment model with expert operational management.",
+        title: "Strategic Collaborators",
+        icon: "handshake",
+        description: "Hospitality and developer partnerships for new locations, sharing our vision of building vibrant entertainment and dining destinations.",
+        benefit: "Equity-based participation and strategic collaboration opportunities.",
     },
 ];
 
@@ -32,7 +32,7 @@ export default function InvestSection() {
         name: "",
         email: "",
         phone: "",
-        partnerType: "Land Owner",
+        partnerType: "Developers & Landowners",
         message: "",
     });
 
@@ -107,9 +107,9 @@ export default function InvestSection() {
                             fontSize: "clamp(32px, 5vw, 60px)",
                         }}
                     >
-                        Own The Highway.
+                        Partner With Us.
                         <br />
-                        <span className="gradient-text">Secure The Returns.</span>
+                        <span className="gradient-text">Join the ARENAA Story.</span>
                     </h2>
                 </div>
 
@@ -207,9 +207,9 @@ export default function InvestSection() {
                                                 onChange={handleChange}
                                                 className="w-full bg-white/5 border border-white/10 p-5 text-white focus:outline-none focus:border-[#FFB800] transition-colors rounded-sm appearance-none"
                                             >
-                                                <option className="bg-black">Land Owner</option>
-                                                <option className="bg-black">Developer / Builder</option>
-                                                <option className="bg-black">Institutional Investor</option>
+                                                <option className="bg-black">Developers & Landowners</option>
+                                                <option className="bg-black">Franchise Partners</option>
+                                                <option className="bg-black">Strategic Collaborators</option>
                                             </select>
                                         </div>
                                         <div className="md:col-span-2 space-y-2">

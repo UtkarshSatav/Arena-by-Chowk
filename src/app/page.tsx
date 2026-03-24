@@ -5,7 +5,6 @@ import AboutBrand from "./components/AboutBrand";
 import Concept from "./components/Concept";
 import Experience from "./components/Experience";
 import Govindam from "./components/Govindam";
-import WhyArenaa from "./components/WhyArenaa";
 import InvestSection from "./components/InvestSection";
 import Footer from "./components/Footer";
 
@@ -26,9 +25,6 @@ export default function Home() {
       </div>
       <div id="govindam">
         <Govindam />
-      </div>
-      <div id="why">
-        <WhyArenaa />
       </div>
       <div id="partner">
         <InvestSection />

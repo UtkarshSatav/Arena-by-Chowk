@@ -18,7 +18,7 @@ export default function Footer() {
                             className="text-4xl lg:text-5xl font-black uppercase text-white mb-6"
                             style={{ fontFamily: "Montserrat, sans-serif" }}
                         >
-                            Own The <span className="text-[#FFB800]">Highway.</span>
+                            Partner With <span className="text-[#FFB800]">ARENAA.</span>
                         </h2>
                         <p className="text-white/40 text-sm tracking-widest uppercase font-bold">
                             Join ARENAA as a Strategic Partner Today
@@ -109,7 +109,7 @@ export default function Footer() {
                         <ul className="space-y-6">
                             <li>
                                 <p className="text-[10px] uppercase font-bold text-white/30 mb-2">Email</p>
-                                <a href="mailto:info@arenaa.in" className="text-sm font-bold text-white hover:text-[#FFB800] transition-colors">info@arenaa.in</a>
+                                <a href="mailto:info@chowk.co.in" className="text-sm font-bold text-white hover:text-[#FFB800] transition-colors">info@chowk.co.in</a>
                             </li>
                             <li>
                                 <p className="text-[10px] uppercase font-bold text-white/30 mb-2">Office</p>
