@@ -86,7 +86,7 @@ export default function AboutBrand() {
                         <FadeIn delay={0.6} direction="left" fullWidth>
                             <div className="relative rounded-sm overflow-hidden border border-white/10 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.8)] group">
                                 <Image
-                                    src="/night_render.jpg" 
+                                    src="/WhatsApp Image 2026-03-18 at 22.14.34.jpeg" 
                                     alt="ARENAA Lifestyle Destination Night"
                                     width={800}
                                     height={1000}
