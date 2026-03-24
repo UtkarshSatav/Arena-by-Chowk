@@ -131,7 +131,7 @@ export default function ExperiencesPage() {
                         <FadeIn direction="left" delay={0.2}>
                             <div className="relative aspect-square md:aspect-video rounded-sm overflow-hidden border border-[#FFB800]/20 group">
                                 <Image 
-                                    src="/govindam_dish.jpg" 
+                                    src="/logo_round.jpg" 
                                     alt="Govindam Cultural Experience"
                                     fill
                                     className="object-cover transition-transform duration-700 group-hover:scale-110"

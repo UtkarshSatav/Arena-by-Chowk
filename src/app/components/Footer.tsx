@@ -39,7 +39,7 @@ export default function Footer() {
                         <div className="flex items-center gap-4 mb-8">
                             <div className="relative w-32 h-20 overflow-hidden rounded-sm border border-white/10 transition-transform">
                                 <Image
-                                    src="/logo_round.jpg"
+                                    src="/govindam_dish.jpg"
                                     alt="ARENAA Logo"
                                     fill
                                     className="object-cover"
