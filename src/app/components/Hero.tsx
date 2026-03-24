@@ -14,7 +14,7 @@ export default function Hero() {
             {/* Background image */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/hero.png" // NEW background image
+                    src="/WhatsApp Image 2026-03-18 at 22.14.34.jpeg"
                     alt="ARENAA Highway Leisure Destination"
                     fill
                     priority
@@ -94,7 +94,7 @@ export default function Hero() {
             </div>
 
             {/* Scroll indicator */}
-            <div className="absolute bottom-10 left-12 flex flex-col items-center gap-4 z-10">
+            <div className="absolute bottom-10 left-12 hidden md:flex flex-col items-center gap-4 z-10">
                 <div
                     className="w-px h-16 relative overflow-hidden bg-white/10"
                 >

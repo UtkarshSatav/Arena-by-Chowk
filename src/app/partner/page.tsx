@@ -23,20 +23,20 @@ export default function PartnerPage() {
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <FadeIn direction="right">
                         <div>
-                            <h2 className="text-sm font-bold uppercase tracking-[0.5em] text-[#FFB800] mb-8 italic">For Developers</h2>
+                            <h2 className="text-sm font-bold uppercase tracking-[0.5em] text-[#FFB800] mb-8 italic">Developers & Landowners</h2>
                             <h3 className="text-4xl md:text-5xl font-black text-white uppercase mb-8 leading-tight">
-                                Transform Your Land Into a <br /> <span className="text-[#FFB800]">Lifestyle Landmark.</span>
+                                Partner in Building <br /> <span className="text-[#FFB800]">Destination Experiences.</span>
                             </h3>
                             <p className="text-lg text-white/50 leading-relaxed mb-12">
-                                We partner with savvy landowners to develop high-yield highway leisure assets. ARENAA provides the brand, the design, and the operational DNA to make your property the region's preferred destination.
+                                ARENAA offers an opportunity for developers and landowners to transform high-potential locations into vibrant lifestyle destinations. Our integrated destination model helps maximise land value while creating long-term visitor engagement.
                             </p>
                             
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 {[
-                                    { title: "Design & Build", desc: "Expert architectural and structural support." },
-                                    { title: "Brand Identity", desc: "Leveraging the CHOWK and ARENAA reputation." },
-                                    { title: "Operations", desc: "Full-stack management and hospitality services." },
-                                    { title: "Marketing", desc: "Digital and ground-level footfall strategies." }
+                                    { title: "Destination Concept Design", desc: "Expert concept and architectural support." },
+                                    { title: "Brand & Operational Expertise", desc: "Leveraging the CHOWK and ARENAA reputation." },
+                                    { title: "Food & Entertainment Programming", desc: "Full-stack management and hospitality services." },
+                                    { title: "Marketing & Positioning", desc: "Digital and ground-level footfall strategies." }
                                 ].map((service, i) => (
                                     <div key={i} className="flex flex-col gap-2">
                                         <div className="w-10 h-0.5 bg-[#FFB800]/50" />
@@ -66,18 +66,18 @@ export default function PartnerPage() {
                 <div className="absolute top-0 right-0 w-full h-full bg-[#FFB800]/5 blur-[200px] pointer-events-none" />
                 
                 <div className="max-w-7xl mx-auto text-center mb-24">
-                    <h2 className="text-sm font-bold uppercase tracking-[0.5em] text-[#FFB800] mb-8 italic italic">Investment</h2>
-                    <h3 className="text-4xl md:text-6xl font-black text-white uppercase mb-6 tracking-tighter">Scalable. Sustainable. <span className="text-white/40">Profitable.</span></h3>
+                    <h2 className="text-sm font-bold uppercase tracking-[0.5em] text-[#FFB800] mb-8 italic italic">Investment & Franchise</h2>
+                    <h3 className="text-4xl md:text-6xl font-black text-white uppercase mb-6 tracking-tighter">Join the ARENAA <span className="text-white/40">Growth Story.</span></h3>
                     <p className="text-xl text-white/50 max-w-3xl mx-auto leading-relaxed">
-                        With multiple revenue streams from dining, entertainment, and retail, the ARENAA model is built for resilience and exponential growth.
+                        ARENAA is designed as a scalable destination platform with the potential to expand across multiple locations. We are actively exploring partnerships with investors and franchise partners who share our vision of building vibrant entertainment and dining destinations.
                     </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
                     {[
-                        { title: "Franchise Model", desc: "Standardized operations with high visibility.", icon: "storefront" },
-                        { title: "Strategic Investment", desc: "Equity-based participation in landmark locations.", icon: "trending_up" },
-                        { title: "Collaborations", desc: "Strategic co-branding for global brands.", icon: "handshake" }
+                        { title: "Destination Investment", desc: "Equity-based participation in landmark destination locations.", icon: "trending_up" },
+                        { title: "Franchise Development", desc: "Scalable model designed for replication across highways and lifestyle hubs.", icon: "storefront" },
+                        { title: "Strategic Collaborations", desc: "Hospitality and developer partnerships for new locations.", icon: "handshake" }
                     ].map((option, i) => (
                         <div key={i} className="glass-card p-12 border-white/5 bg-white/[0.02] hover:border-[#FFB800]/30 transition-all group">
                             <span className="material-symbols-outlined text-[#FFB800] text-4xl mb-8 group-hover:scale-110 transition-transform">{option.icon}</span>

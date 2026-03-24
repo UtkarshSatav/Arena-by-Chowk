@@ -12,8 +12,8 @@ export default function ModelPage() {
             <Navbar />
             
             <PageHero 
-                title="The Model"
-                subtitle="The Future of Highway Infrastructure"
+                title="ARENAA Highway Model"
+                subtitle="Transforming Highway Stops Into Vibrant Lifestyle Destinations"
                 image="/arenaa_model_aerial.png"
             />
 
@@ -21,12 +21,12 @@ export default function ModelPage() {
             <section className="py-24 px-6 border-b border-white/5">
                 <div className="max-w-7xl mx-auto flex flex-col items-center">
                     <FadeIn>
-                        <h2 className="text-sm font-bold uppercase tracking-[0.4em] text-[#FFB800] mb-8 text-center italic">The Highway Destination</h2>
+                        <h2 className="text-sm font-bold uppercase tracking-[0.4em] text-[#FFB800] mb-8 text-center italic">A New Generation Highway Destination</h2>
                         <h3 className="text-4xl md:text-6xl font-black text-white uppercase mb-12 text-center leading-tight max-w-4xl">
-                            Why the Highway is our <br /> <span className="text-[#FFB800]">Primary Arena.</span>
+                            Transforming Highway Stops Into <br /> <span className="text-[#FFB800]">Vibrant Destinations.</span>
                         </h3>
                         <p className="text-xl text-white/40 leading-relaxed font-light text-center max-w-3xl mx-auto">
-                            Modern India is a nation on the move. With rapid expressway expansion and a shift in luxury consumption, the highway has transformed from a transit corridor into a prime economic zone.
+                            As India's highway infrastructure rapidly expands and travel between cities increases, highways are becoming important social corridors where travellers look for safe, engaging, and comfortable places to stop. ARENAA reimagines these spaces entirely.
                         </p>
                     </FadeIn>
                 </div>
@@ -36,10 +36,10 @@ export default function ModelPage() {
             <section className="py-24 px-6">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                     {[
-                        { title: "Strategic Locations", desc: "Located at high-traffic nodes and tourism corridors." },
-                        { title: "23% Annual ROI", desc: "Unmatched financial performance in the leisure sector." },
-                        { title: "15% Revenue Share", desc: "Transparent and growth-oriented partner models." },
-                        { title: "6-Month Delivery", desc: "Rapid rollout with pre-engineered design modules." }
+                        { title: "Curated Food Courts", desc: "Restaurants and food courts designed for travellers and families." },
+                        { title: "Gaming & Entertainment", desc: "Interactive gaming zones and entertainment activities for all ages." },
+                        { title: "Celebration Spaces", desc: "Family-friendly social spaces and event areas for gatherings." },
+                        { title: "Rest & Relaxation", desc: "Comfortable environments designed for longer, more enjoyable stays." }
                     ].map((feature, i) => (
                         <div key={i} className="flex flex-col border-l border-white/10 pl-8 group">
                             <div className="w-2 h-2 rounded-full bg-[#FFB800] mb-6 group-hover:scale-[2] transition-transform" />
@@ -57,14 +57,14 @@ export default function ModelPage() {
                 <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <FadeIn direction="right">
                         <div>
-                            <h2 className="text-[#FFB800] font-black uppercase tracking-[0.3em] mb-4 text-sm italic">Growth Strategy</h2>
-                            <h3 className="text-4xl md:text-5xl font-black text-white uppercase mb-8">Dominating High-Traffic <br /> <span className="text-white/40">Zones.</span></h3>
+                            <h2 className="text-[#FFB800] font-black uppercase tracking-[0.3em] mb-4 text-sm italic">Ideal Locations</h2>
+                            <h3 className="text-4xl md:text-5xl font-black text-white uppercase mb-8">Suited for <br /> <span className="text-white/40">High-Traffic Routes.</span></h3>
                             <ul className="space-y-8">
                                 {[
-                                    { label: "Highways & Expressways", icon: "road" },
+                                    { label: "National & State Highways", icon: "road" },
                                     { label: "Tourism Corridors", icon: "map" },
                                     { label: "Pilgrimage Routes", icon: "mosque" },
-                                    { label: "Urban Sprawl Hubs", icon: "location_city" }
+                                    { label: "High-Traffic Intercity Routes", icon: "location_city" }
                                 ].map((loc, i) => (
                                     <li key={i} className="flex items-start gap-6 group">
                                         <span className="material-symbols-outlined text-[#FFB800] text-3xl group-hover:scale-110 transition-transform">
@@ -72,7 +72,7 @@ export default function ModelPage() {
                                         </span>
                                         <div>
                                             <h4 className="text-white font-bold uppercase tracking-wider mb-1">{loc.label}</h4>
-                                            <p className="text-[9px] font-bold uppercase tracking-widest text-white/30">Ensuring consistent footfall and visibility.</p>
+                                            <p className="text-[9px] font-bold uppercase tracking-widest text-white/30">Strong potential for sustained visitor flow and long-term growth.</p>
                                         </div>
                                     </li>
                                 ))}
@@ -96,14 +96,17 @@ export default function ModelPage() {
             {/* Architecture & Design Section */}
             <section className="py-32 px-6">
                 <div className="max-w-7xl mx-auto text-center mb-24">
-                    <h2 className="text-sm font-bold uppercase tracking-[0.5em] text-[#FFB800] mb-8 italic">Architecture</h2>
-                    <h3 className="text-4xl md:text-7xl font-black text-white uppercase mb-4 tracking-tighter">Iconic. <span className="text-white/40">Integrated.</span></h3>
+                    <h2 className="text-sm font-bold uppercase tracking-[0.5em] text-[#FFB800] mb-8 italic">Architecture & Design</h2>
+                    <h3 className="text-4xl md:text-7xl font-black text-white uppercase mb-4 tracking-tighter">Designed to Create <span className="text-white/40">Memorable Destinations.</span></h3>
+                    <p className="text-xl text-white/40 max-w-3xl mx-auto mt-8 leading-relaxed">
+                        Our architectural approach combines modern design, welcoming social spaces, and carefully planned layouts that encourage exploration and interaction between dining, entertainment, and social spaces.
+                    </p>
                 </div>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {[
                         { title: "Open Social Spaces", img: "/outdoor_seating.jpg" },
-                        { title: "Integrated Zones", img: "/layout_3d.jpg" },
+                        { title: "Integrated Experience Zones", img: "/layout_3d.jpg" },
                         { title: "Cultural Elements", img: "/govindam_dining.jpg" }
                     ].map((item, i) => (
                         <FadeIn key={i} delay={i * 0.1}>

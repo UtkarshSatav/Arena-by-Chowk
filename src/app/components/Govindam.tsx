@@ -31,15 +31,7 @@ export default function Govindam() {
                                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
                                 </div>
                                 
-                                {/* Floating dish image */}
-                                <div className="absolute -bottom-10 -right-10 w-48 h-48 rounded-full border-4 border-[#0D0D0D] overflow-hidden shadow-2xl z-20">
-                                    <Image
-                                        src="/govindam_dish.jpg"
-                                        alt="Satvik Cuisine"
-                                        fill
-                                        className="object-cover"
-                                    />
-                                </div>
+                                {/* Floating dish image - removed */}
                             </div>
                         </FadeIn>
                     </div>

@@ -21,11 +21,11 @@ export default function ExperiencesPage() {
             <section className="py-24 px-6 text-center">
                 <FadeIn>
                     <h2 className="text-sm font-bold uppercase tracking-[0.5em] text-[#FFB800] mb-8 italic">
-                        The Spotlight
+                        Designed for Everyone
                     </h2>
                     <p className="max-w-4xl mx-auto text-2xl md:text-3xl font-bold text-white uppercase tracking-tighter leading-tight">
-                        We don't just provide services. <br />
-                        <span className="text-white/40">We curate moments that stay with you long after the journey ends.</span>
+                        ARENAA destinations are designed around a mix of experiences <br />
+                        <span className="text-white/40">that cater to visitors of all age groups.</span>
                     </p>
                 </FadeIn>
             </section>
@@ -38,12 +38,12 @@ export default function ExperiencesPage() {
                     <div className="order-2 lg:order-1">
                         <FadeIn direction="right">
                             <h2 className="text-[#FF00FF] font-black uppercase tracking-[0.3em] mb-4 text-sm">Gaming & Entertainment</h2>
-                            <h3 className="text-4xl md:text-6xl font-black text-white uppercase mb-8">Unleash the <br /><span className="text-[#FF00FF] drop-shadow-[0_0_15px_rgba(255,0,255,0.5)]">Future.</span></h3>
+                            <h3 className="text-4xl md:text-6xl font-black text-white uppercase mb-8">Play Beyond <br /><span className="text-[#FF00FF] drop-shadow-[0_0_15px_rgba(255,0,255,0.5)]">the Ordinary.</span></h3>
                             <p className="text-lg text-white/60 mb-8 leading-relaxed">
-                                From state-of-the-art VR experiences and interactive 4D cinema to high-energy arcade zones. ARENAA brings international gaming standards to the highway.
+                                The gaming and entertainment zones at ARENAA bring excitement and energy to the destination. Designed for both youth and families, these spaces feature interactive gaming experiences and entertainment activities that encourage friendly competition and social engagement.
                             </p>
                             <ul className="space-y-4">
-                                {["Immersive VR Zones", "Interactive Gaming Pods", "Family Arcade Hubs", "eSports Lounges"].map((item, i) => (
+                                {["Arcade games and skill-based entertainment", "Group gaming activities", "Family-friendly entertainment", "Social gaming experiences"].map((item, i) => (
                                     <li key={i} className="flex items-center gap-4 group">
                                         <div className="w-1.5 h-1.5 bg-[#FF00FF] group-hover:scale-150 transition-transform" />
                                         <span className="text-xs uppercase font-black tracking-widest text-white/50 group-hover:text-white transition-colors">{item}</span>
@@ -84,16 +84,16 @@ export default function ExperiencesPage() {
                     </FadeIn>
                     <FadeIn direction="left" delay={0.2}>
                         <h2 className="text-[#FFB800] font-black uppercase tracking-[0.3em] mb-4 text-sm">Food & Dining</h2>
-                        <h3 className="text-4xl md:text-6xl font-black text-white uppercase mb-8">A Symphony <br /> of <span className="text-[#FFB800]">Flavors.</span></h3>
+                        <h3 className="text-4xl md:text-6xl font-black text-white uppercase mb-8">A Destination for <br /> <span className="text-[#FFB800]">Food Lovers.</span></h3>
                         <p className="text-lg text-white/60 mb-8 leading-relaxed">
-                            A curated selection of the finest global cuisines and legendary local favorites. Our food court is designed as a social landscape where every meal is an event.
+                            Food is at the heart of the ARENAA experience. Our destinations feature curated food courts, themed restaurants, and casual dining spaces that bring together a variety of cuisines and culinary experiences in a lively atmosphere designed for gatherings and celebrations.
                         </p>
                         <div className="grid grid-cols-2 gap-8">
                             {[
-                                { label: "Premium Food Court", icon: "fastfood" },
-                                { label: "Themed Dining", icon: "restaurant" },
-                                { label: "Social Lounges", icon: "local_bar" },
-                                { label: "Artisan Cafes", icon: "coffee" }
+                                { label: "Curated Food Courts", icon: "fastfood" },
+                                { label: "Themed Restaurants", icon: "restaurant" },
+                                { label: "Social Dining Spaces", icon: "local_bar" },
+                                { label: "Casual Dining", icon: "coffee" }
                             ].map((item, i) => (
                                 <div key={i} className="group">
                                     <span className="material-symbols-outlined text-[#FFB800] mb-4 text-3xl group-hover:scale-110 transition-transform">
@@ -114,13 +114,16 @@ export default function ExperiencesPage() {
                 <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     <div className="order-2 lg:order-1">
                         <FadeIn direction="right">
-                            <h2 className="text-[#FFB800] font-black uppercase tracking-[0.3em] mb-4 text-sm">Govindam</h2>
-                            <h3 className="text-4xl md:text-6xl font-black text-white uppercase mb-8">The Spirit <br /> of <span className="text-[#FFB800]">Sattvic.</span></h3>
-                            <p className="text-lg text-white/60 mb-8 leading-relaxed font-light italic">
-                                Inspired by the sacred temples of India, Govindam offers a transcendental dining experience where culture, spiritual vibration, and pure Satvik cuisine blend into one.
+                            <h2 className="text-[#FFB800] font-black uppercase tracking-[0.3em] mb-4 text-sm">Govindam – Cultural Dining</h2>
+                            <h3 className="text-4xl md:text-6xl font-black text-white uppercase mb-8">Where Culture <br /> Meets <span className="text-[#FFB800]">Cuisine.</span></h3>
+                            <p className="text-lg text-white/60 mb-8 leading-relaxed font-light">
+                                Govindam by CHOWK is a theme-based cultural dining concept inspired by India's rich spiritual and culinary heritage. Focused on satvik vegetarian cuisine, Govindam offers a peaceful and culturally immersive dining experience that celebrates traditional Indian hospitality.
+                            </p>
+                            <p className="text-lg text-white/60 mb-8 leading-relaxed font-light">
+                                The restaurant environment is designed with temple-inspired architecture, warm ambience, and authentic culinary traditions — especially suited for destinations connected to cultural tourism and pilgrimage routes.
                             </p>
                             <button className="border border-[#FFB800] text-[#FFB800] px-10 py-4 text-xs font-black uppercase tracking-widest hover:bg-[#FFB800] hover:text-black transition-all">
-                                Explore The Heritage →
+                                Explore Govindam →
                             </button>
                         </FadeIn>
                     </div>

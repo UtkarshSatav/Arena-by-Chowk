@@ -37,35 +37,18 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="col-span-1 lg:col-span-1">
                         <div className="flex items-center gap-4 mb-8">
-                            <div className="relative w-20 h-12 overflow-hidden rounded-sm border border-white/10 group-hover:scale-110 transition-transform">
+                            <div className="relative w-32 h-20 overflow-hidden rounded-sm border border-white/10 transition-transform">
                                 <Image
-                                    src="/govindam_dish.jpg" // Using the intended gold logo
+                                    src="/logo_gold.jpg"
                                     alt="ARENAA Logo"
                                     fill
                                     className="object-cover"
                                 />
                             </div>
-                            <div className="flex flex-col leading-none uppercase">
-                                <span
-                                    className="text-2xl font-black text-white px-2 py-1 leading-none border border-white/20"
-                                    style={{ fontFamily: "Montserrat, sans-serif" }}
-                                >
-                                    ARENAA
-                                </span>
-                                <span className="text-[8px] font-black tracking-[0.4em] py-1 text-[#FFB800]">
-                                    by CHOWK
-                                </span>
-                            </div>
                         </div>
                         <p className="text-white/40 text-sm leading-relaxed mb-8">
                             Next-generation lifestyle destination where food, entertainment, and social experiences come together in one vibrant space.
                         </p>
-                        <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 rounded-full bg-[#FFB800] animate-pulse" />
-                            <span className="text-[10px] font-bold uppercase tracking-widest text-white/60">
-                                Live: Development Phase
-                            </span>
-                        </div>
                     </div>
 
                     {/* Quick Links */}

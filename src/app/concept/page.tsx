@@ -22,13 +22,13 @@ export default function ConceptPage() {
                 <div className="max-w-4xl mx-auto text-center">
                     <FadeIn>
                         <h2 className="text-sm font-bold uppercase tracking-[0.5em] text-[#FFB800] mb-8">
-                            The Challenge
+                            A New Kind of Social Destination
                         </h2>
                         <h3 className="text-4xl md:text-6xl font-black text-white uppercase mb-12">
-                            Traditional stops are <span className="text-white/20 italic">Boring.</span>
+                            More Than a <span className="text-white/20 italic">Single Attraction.</span>
                         </h3>
                         <p className="text-xl text-white/60 leading-relaxed font-light">
-                            For decades, Indian highway stops have been purely functional—quick meals, low engagement, and minimal comfort. We saw the gap between "stopping for a break" and "enjoying a journey."
+                            Visitors today seek multi-experience environments where they can dine, socialise, play games, celebrate events, and spend quality time with family and friends. ARENAA integrates these experiences into one vibrant destination.
                         </p>
                     </FadeIn>
                 </div>
@@ -50,27 +50,27 @@ export default function ConceptPage() {
                     <FadeIn direction="left">
                         <div className="space-y-8">
                             <h2 className="text-sm font-bold uppercase tracking-[0.5em] text-[#FFB800]">
-                                Our Solution
+                                What Visitors Can Enjoy
                             </h2>
                             <h3 className="text-4xl md:text-5xl font-black text-white uppercase leading-tight">
-                                A Multi-Experience Hub
+                                One Destination, Many Experiences
                             </h3>
                             <p className="text-lg text-white/50 leading-relaxed">
-                                ARENAA redefines the transit ecosystem by integrating premium dining, high-tech gaming, and cultural experiences into a single architectural masterpiece. 
+                                Traditional highway stops or standalone restaurants often offer limited engagement. ARENAA reimagines these spaces by combining entertainment, dining, and cultural experiences in one environment.
                             </p>
-                            <div className="pt-8 grid grid-cols-2 gap-8">
+                            <ul className="space-y-4 pt-4">
                                 {[
-                                    { label: "High ROI", val: "23%+" },
-                                    { label: "Capex", val: "₹11 Cr" },
-                                    { label: "Footfall", val: "High Frequency" },
-                                    { label: "Brand", val: "CHOWK" }
-                                ].map((stat, i) => (
-                                    <div key={i}>
-                                        <p className="text-2xl font-black text-[#FFB800]">{stat.val}</p>
-                                        <p className="text-[10px] font-bold uppercase tracking-widest text-white/40">{stat.label}</p>
-                                    </div>
+                                    "Casual and themed dining",
+                                    "Interactive gaming and entertainment",
+                                    "Celebration spaces for events and gatherings",
+                                    "Cultural dining experiences through Govindam"
+                                ].map((item, i) => (
+                                    <li key={i} className="flex items-center gap-4 group">
+                                        <div className="w-1.5 h-1.5 bg-[#FFB800] group-hover:scale-150 transition-transform" />
+                                        <span className="text-xs uppercase font-black tracking-widest text-white/50 group-hover:text-white transition-colors">{item}</span>
+                                    </li>
                                 ))}
-                            </div>
+                            </ul>
                         </div>
                     </FadeIn>
                 </div>
@@ -90,10 +90,10 @@ export default function ConceptPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                         {[
-                            { label: "Eat", desc: "Multi-cuisine excellence and legendary food courts." },
-                            { label: "Play", desc: "Arcade gaming, VR, and high-energy fun." },
-                            { label: "Celebrate", desc: "Private zones for family and group gatherings." },
-                            { label: "Experience", desc: "Immersive culture, branding, and vibe." }
+                            { label: "Eat", desc: "Curated food courts, themed restaurants, and casual dining for every occasion." },
+                            { label: "Play", desc: "Arcade games, skill-based entertainment, and group gaming activities." },
+                            { label: "Celebrate", desc: "Party and celebration spaces for events, gatherings, and special moments." },
+                            { label: "Experience", desc: "Cultural dining, social spaces, and immersive environments for all ages." }
                         ].map((pillar, i) => (
                             <div key={i} className="flex flex-col items-center text-center relative py-12 px-4 overflow-hidden group">
                                 {/* Large Background Text - contained within the item */}

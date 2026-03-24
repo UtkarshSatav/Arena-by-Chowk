@@ -54,16 +54,19 @@ export default function ContactPage() {
                     <FadeIn direction="right">
                         <div className="space-y-12">
                             <div>
-                                <h2 className="text-[#FFB800] font-black uppercase tracking-[0.3em] mb-8 text-sm italic italic">Connect</h2>
+                                <h2 className="text-[#FFB800] font-black uppercase tracking-[0.3em] mb-8 text-sm italic">Get in Touch</h2>
                                 <h3 className="text-4xl lg:text-5xl font-black text-white uppercase mb-8 leading-tight">
-                                    Let's Build the <br /> <span className="text-white/40 italic italic">Future </span> Together.
+                                    We Would Love to <br /> <span className="text-white/40 italic">Hear From You.</span>
                                 </h3>
+                                <p className="text-lg text-white/50 leading-relaxed">
+                                    Whether you are a visitor, developer, partner, or investor interested in the ARENAA concept, our team is happy to connect.
+                                </p>
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                                 <div>
                                     <p className="text-[10px] font-black uppercase tracking-widest text-white/30 mb-2">Email</p>
-                                    <a href="mailto:info@arenaa.in" className="text-sm font-bold text-white hover:text-[#FFB800] transition-colors">info@arenaa.in</a>
+                                    <a href="mailto:info@chowk.co.in" className="text-sm font-bold text-white hover:text-[#FFB800] transition-colors">info@chowk.co.in</a>
                                 </div>
                                 <div className="col-span-1 md:col-span-2">
                                     <p className="text-[10px] font-black uppercase tracking-widest text-white/30 mb-2">Registered Office</p>

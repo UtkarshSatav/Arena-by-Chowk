@@ -12,8 +12,8 @@ export default function AboutPage() {
             <Navbar />
             
             <PageHero 
-                title="Our Story"
-                subtitle="Redefining the Highway Experience for New India"
+                title="About ARENAA"
+                subtitle="A Next-Generation Food, Gaming & Entertainment Destination"
                 image="/about_hero_cinematic.png"
             />
 
@@ -23,17 +23,17 @@ export default function AboutPage() {
                     <FadeIn direction="right">
                         <div>
                             <h2 className="text-sm font-bold uppercase tracking-[0.5em] text-[#FFB800] mb-8">
-                                Brand Overview
+                                About ARENAA
                             </h2>
                             <h3 className="text-4xl md:text-5xl font-black text-white uppercase mb-8 leading-tight">
-                                More than a Stop. <br />
-                                <span className="text-white/40">A Destination.</span>
+                                A Next-Generation <br />
+                                <span className="text-white/40">Lifestyle Destination.</span>
                             </h3>
                             <p className="text-lg text-white/60 leading-relaxed mb-8">
-                                ARENAA by CHOWK is India's first integrated highway leisure destination, a revolutionary concept that transforms traditional transit stops into high-energy hubs of lifestyle, entertainment, and culinary excellence.
+                                ARENAA by CHOWK is a next-generation food, gaming, and entertainment destination designed for modern lifestyle hubs and highway corridors.
                             </p>
                             <p className="text-lg text-white/60 leading-relaxed">
-                                Our vision is to create a seamless ecosystem where travelers and locals alike can Eat, Play, Celebrate, and Experience the best of modern India under one roof.
+                                Built as an integrated social space, ARENAA brings together curated dining experiences, high-energy gaming zones, and vibrant entertainment environments where families, travellers, youth, and communities come together to relax, play, and connect.
                             </p>
                         </div>
                     </FadeIn>
@@ -55,19 +55,19 @@ export default function AboutPage() {
             <section className="py-24 bg-white/[0.02]">
                 <div className="max-w-7xl mx-auto px-6 text-center mb-20">
                     <h2 className="text-sm font-bold uppercase tracking-[0.5em] text-[#FFB800] mb-8">
-                        The Ecosystem
+                        A Destination to Eat, Play & Unwind
                     </h2>
                     <h3 className="text-4xl md:text-5xl font-black text-white uppercase">
-                        A World of Possibilities
+                        Everything Under One Roof
                     </h3>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border-y border-white/10">
                     {[
-                        { title: "Food Courts", desc: "Global flavors meets local legends", icon: "restaurant" },
-                        { title: "Gaming Zones", desc: "High-tech immersive entertainment", icon: "sports_esports" },
-                        { title: "Social Hubs", desc: "Designed for connection and community", icon: "groups" },
-                        { title: "Culture", desc: "Spiritual and traditional dining", icon: "temple_hindu" }
+                        { title: "Food Courts & Dining", desc: "Curated food courts and themed restaurants", icon: "restaurant" },
+                        { title: "Gaming Zones", desc: "Interactive gaming and entertainment activities", icon: "sports_esports" },
+                        { title: "Celebration Spaces", desc: "Party and event spaces for every occasion", icon: "groups" },
+                        { title: "Cultural Dining", desc: "Govindam – satvik vegetarian heritage dining", icon: "temple_hindu" }
                     ].map((item, i) => (
                         <div key={i} className="p-12 bg-black hover:bg-[#FFB800]/5 transition-colors group">
                             <span className="material-symbols-outlined text-[#FFB800] text-4xl mb-8 group-hover:scale-110 transition-transform inline-block">
@@ -92,7 +92,21 @@ export default function AboutPage() {
                             Designed for <span className="text-transparent border-text">New India</span>
                         </h2>
                         <p className="text-xl md:text-2xl text-white/40 leading-relaxed font-medium">
-                            As travel and lifestyle behaviors shift across the subcontinent, ARENAA stands as the bridge between functional necessity and premium desire. We provide an oasis of international standards on the Indian highway.
+                            As travel, lifestyle, and entertainment preferences evolve, highways and emerging cities are becoming vibrant social corridors. ARENAA responds to this shift by offering a destination that blends food, entertainment, and community experiences in one integrated environment.
+                        </p>
+                    </FadeIn>
+                </div>
+            </section>
+
+            {/* Part of CHOWK Ecosystem */}
+            <section className="py-24 px-6 border-t border-white/5">
+                <div className="max-w-4xl mx-auto text-center">
+                    <FadeIn>
+                        <h2 className="text-sm font-bold uppercase tracking-[0.5em] text-[#FFB800] mb-8">
+                            The CHOWK Entertainment Ecosystem
+                        </h2>
+                        <p className="text-xl text-white/50 leading-relaxed">
+                            ARENAA is a key vertical of CHOWK Entertainment, an integrated leisure and hospitality platform focused on building scalable destination experiences across India. Together with other concepts within the ecosystem, ARENAA contributes to a broader vision of creating vibrant destinations where people come together to eat, play, celebrate, and experience life.
                         </p>
                     </FadeIn>
                 </div>

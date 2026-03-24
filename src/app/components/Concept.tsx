@@ -91,16 +91,7 @@ export default function Concept() {
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none" />
                                 </div>
                                 
-                                {/* Overlay element */}
-                                <div className="absolute -top-6 -right-6 z-20 glass-card p-6 border border-[#FFB800]/40 bg-black/90 shadow-2xl skew-x-1">
-                                    <div className="flex items-center gap-4">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-[#FFB800] animate-pulse" />
-                                        <div>
-                                            <p className="text-[10px] font-bold uppercase tracking-widest text-[#FFB800] mb-1">Status</p>
-                                            <p className="text-sm font-black text-white tracking-wider uppercase">Investment Ready</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                {/* Overlay element removed */}
                             </div>
                         </FadeIn>
                     </div>
