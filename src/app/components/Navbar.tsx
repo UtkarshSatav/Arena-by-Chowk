@@ -36,28 +36,14 @@ export default function Navbar() {
         >
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
                 {/* Brand Logo */}
-                <Link href="/" className="group flex items-center gap-4">
+                <Link href="/" className="group flex items-center">
                     <div className="relative w-20 h-12 overflow-hidden rounded-sm border border-white/20 transition-transform duration-300 group-hover:scale-110">
                         <Image
-                            src="/govindam_dish.jpg" // Using the intended gold logo
+                            src="/govindam_dish.jpg"
                             alt="ARENAA Logo"
                             fill
                             className="object-cover"
                         />
-                    </div>
-                    <div className="flex flex-col leading-none">
-                        <span
-                            className="text-2xl font-black tracking-tighter text-white uppercase"
-                            style={{ fontFamily: "Montserrat, sans-serif" }}
-                        >
-                            ARENAA
-                        </span>
-                        <span
-                            className="text-[9px] tracking-[0.4em] font-bold uppercase"
-                            style={{ color: "#FFB800" }}
-                        >
-                            by CHOWK
-                        </span>
                     </div>
                 </Link>
 

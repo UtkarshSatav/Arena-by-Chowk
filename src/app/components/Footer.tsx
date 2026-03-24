@@ -126,29 +126,24 @@ export default function Footer() {
                         <ul className="space-y-6">
                             <li>
                                 <p className="text-[10px] uppercase font-bold text-white/30 mb-2">Email</p>
-                                <a
-                                    href="mailto:contact@chowk.in"
-                                    className="text-sm font-bold text-white hover:text-[#FFB800] transition-colors"
-                                >
-                                    contact@arenaa.in
-                                </a>
+                                <a href="mailto:info@arenaa.in" className="text-sm font-bold text-white hover:text-[#FFB800] transition-colors">info@arenaa.in</a>
                             </li>
                             <li>
-                                <p className="text-[10px] uppercase font-bold text-white/30 mb-2">Inquiry</p>
-                                <a
-                                    href="tel:+919876543210"
-                                    className="text-sm font-bold text-white hover:text-[#FFB800] transition-colors"
-                                >
-                                    +91 91150 90050
-                                </a>
-                            </li>
-                            <li>
-                                <p className="text-[10px] uppercase font-bold text-white/30 mb-2">HQ</p>
+                                <p className="text-[10px] uppercase font-bold text-white/30 mb-2">Office</p>
                                 <p className="text-xs font-bold text-white/60 leading-relaxed uppercase">
-                                    CHOWK ENTERTAINMENT,<br />
-                                    Phase 8B, Industrial Area,<br />
-                                    Mohali, Punjab
+                                    ARENAA by CHOWK<br />
+                                    Chowk Entertainment Pvt. Ltd.<br />
+                                    WZ-24/1 FF Left Side Mukharjee Park<br />
+                                    New Delhi – 110018
                                 </p>
+                            </li>
+                            <li>
+                                <p className="text-[10px] uppercase font-bold text-white/30 mb-3">Follow Us</p>
+                                <div className="flex items-center gap-4">
+                                    <a href="https://www.facebook.com/profile.php?id=61586878500352" target="_blank" rel="noopener noreferrer" className="text-[10px] font-bold uppercase tracking-widest text-white/50 hover:text-[#FFB800] transition-colors">FB</a>
+                                    <a href="https://www.linkedin.com/showcase/arenaabychowk/" target="_blank" rel="noopener noreferrer" className="text-[10px] font-bold uppercase tracking-widest text-white/50 hover:text-[#FFB800] transition-colors">LI</a>
+                                    <a href="https://www.instagram.com/arenaabychowk/" target="_blank" rel="noopener noreferrer" className="text-[10px] font-bold uppercase tracking-widest text-white/50 hover:text-[#FFB800] transition-colors">IG</a>
+                                </div>
                             </li>
                         </ul>
                     </div>
@@ -160,15 +155,15 @@ export default function Footer() {
                         © 2026 ARENAA by CHOWK. ALL RIGHTS RESERVED.
                     </p>
                     <div className="flex items-center gap-8">
-                        <div className="w-10 h-10 rounded-full flex items-center justify-center border border-white/5 text-white/30 hover:text-[#FFB800] hover:border-[#FFB800]/50 transition-all cursor-pointer">
-                            <span className="material-symbols-outlined text-sm">language</span>
-                        </div>
-                        <div className="w-10 h-10 rounded-full flex items-center justify-center border border-white/5 text-white/30 hover:text-[#FFB800] hover:border-[#FFB800]/50 transition-all cursor-pointer">
-                            <span className="material-symbols-outlined text-sm">mail</span>
-                        </div>
-                        <div className="w-10 h-10 rounded-full flex items-center justify-center border border-white/5 text-white/30 hover:text-[#FFB800] hover:border-[#FFB800]/50 transition-all cursor-pointer">
-                            <span className="material-symbols-outlined text-sm">call</span>
-                        </div>
+                        <a href="https://www.facebook.com/profile.php?id=61586878500352" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center border border-white/5 text-white/30 hover:text-[#FFB800] hover:border-[#FFB800]/50 transition-all">
+                            <span className="text-[10px] font-black">FB</span>
+                        </a>
+                        <a href="https://www.linkedin.com/showcase/arenaabychowk/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center border border-white/5 text-white/30 hover:text-[#FFB800] hover:border-[#FFB800]/50 transition-all">
+                            <span className="text-[10px] font-black">LI</span>
+                        </a>
+                        <a href="https://www.instagram.com/arenaabychowk/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full flex items-center justify-center border border-white/5 text-white/30 hover:text-[#FFB800] hover:border-[#FFB800]/50 transition-all">
+                            <span className="text-[10px] font-black">IG</span>
+                        </a>
                     </div>
                 </div>
             </div>

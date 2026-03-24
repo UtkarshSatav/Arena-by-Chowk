@@ -63,19 +63,24 @@ export default function ContactPage() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                                 <div>
                                     <p className="text-[10px] font-black uppercase tracking-widest text-white/30 mb-2">Email</p>
-                                    <p className="text-lg font-bold text-white uppercase">contact@arenaa.in</p>
-                                </div>
-                                <div>
-                                    <p className="text-[10px] font-black uppercase tracking-widest text-white/30 mb-2">Inquiry</p>
-                                    <p className="text-lg font-bold text-white uppercase">+91 91150 90050</p>
+                                    <a href="mailto:info@arenaa.in" className="text-sm font-bold text-white hover:text-[#FFB800] transition-colors">info@arenaa.in</a>
                                 </div>
                                 <div className="col-span-1 md:col-span-2">
-                                    <p className="text-[10px] font-black uppercase tracking-widest text-white/30 mb-2">Headquarters</p>
+                                    <p className="text-[10px] font-black uppercase tracking-widest text-white/30 mb-2">Registered Office</p>
                                     <p className="text-sm font-bold text-white/60 leading-relaxed uppercase">
-                                        CHOWK ENTERTAINMENT,<br />
-                                        Phase 8B, Industrial Area,<br />
-                                        Mohali, Punjab
+                                        ARENAA by CHOWK<br />
+                                        Chowk Entertainment Pvt. Ltd.<br />
+                                        WZ-24/1 FF Left Side Mukharjee Park<br />
+                                        New Delhi – 110018
                                     </p>
+                                </div>
+                                <div className="col-span-1 md:col-span-2">
+                                    <p className="text-[10px] font-black uppercase tracking-widest text-white/30 mb-4">Follow Us</p>
+                                    <div className="flex items-center gap-6">
+                                        <a href="https://www.facebook.com/profile.php?id=61586878500352" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-[#FFB800] transition-colors text-xs font-bold uppercase tracking-widest">Facebook</a>
+                                        <a href="https://www.linkedin.com/showcase/arenaabychowk/" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-[#FFB800] transition-colors text-xs font-bold uppercase tracking-widest">LinkedIn</a>
+                                        <a href="https://www.instagram.com/arenaabychowk/" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-[#FFB800] transition-colors text-xs font-bold uppercase tracking-widest">Instagram</a>
+                                    </div>
                                 </div>
                             </div>
 

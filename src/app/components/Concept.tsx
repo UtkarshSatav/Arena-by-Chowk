@@ -70,43 +70,7 @@ export default function Concept() {
                                 </div>
                             </div>
 
-                            {/* Key Stats Grid */}
-                            <div className="grid grid-cols-2 gap-px mb-12 border border-white/10 overflow-hidden rounded-sm" style={{ background: "rgba(var(--glass-rgb),0.1)" }}>
-                                {[
-                                    { label: "Land Area", value: "~50,000 sq. ft" },
-                                    { label: "Built-up area", value: "~20,000 sq. ft" },
-                                    { label: "Revenue Share", value: "12% - 15%" },
-                                    { label: "Annual ROI", value: "~23% Est." },
-                                ].map((stat, i) => (
-                                    <div key={i} className="p-8 bg-black flex flex-col gap-2 border-r border-b border-white/5">
-                                        <p className="text-[9px] font-bold uppercase tracking-widest text-white/20">{stat.label}</p>
-                                        <p className="text-2xl font-black text-white">{stat.value}</p>
-                                    </div>
-                                ))}
-                            </div>
 
-                            {/* Capex Details */}
-                            <div className="glass-card feature-card p-10 border border-[#FFB800]/20 rounded-sm bg-black/60 relative overflow-hidden group">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFB800]/5 rounded-full blur-3xl group-hover:bg-[#FFB800]/10 transition-colors" />
-                                <h5 className="text-[10px] font-bold uppercase tracking-[0.4em] mb-6 text-[#FFB800]">Capex Requirement</h5>
-                                <div className="space-y-6">
-                                    <div className="flex items-center justify-between">
-                                        <div className="flex flex-col gap-1">
-                                            <span className="text-sm font-black text-white uppercase tracking-wider">Greenfield Development</span>
-                                            <span className="text-[10px] text-white/30 uppercase tracking-widest font-bold">End-to-end execution</span>
-                                        </div>
-                                        <span className="stat-number text-2xl text-[#FFB800]">₹12 Cr</span>
-                                    </div>
-                                    <div className="w-full h-px bg-white/5" />
-                                    <div className="flex items-center justify-between">
-                                        <div className="flex flex-col gap-1">
-                                            <span className="text-sm font-black text-white uppercase tracking-wider text-opacity-60">Ready Structure Model</span>
-                                            <span className="text-[10px] text-white/20 uppercase tracking-widest font-bold">Fit-out & operations only</span>
-                                        </div>
-                                        <span className="stat-number text-2xl text-white text-opacity-60">₹8 Cr</span>
-                                    </div>
-                                </div>
-                            </div>
                         </FadeIn>
                     </div>
                     
