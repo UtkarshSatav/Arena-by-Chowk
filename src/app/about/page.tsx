@@ -89,7 +89,7 @@ export default function AboutPage() {
                 <div className="max-w-4xl mx-auto text-center">
                     <FadeIn>
                         <h2 className="text-5xl md:text-7xl font-black text-white uppercase mb-12 tracking-tighter">
-                            Designed for <span className="text-transparent border-text">New India</span>
+                            Designed for <span className="text-[#FFB800]">New India</span>
                         </h2>
                         <p className="text-xl md:text-2xl text-white/40 leading-relaxed font-medium">
                             As travel, lifestyle, and entertainment preferences evolve, highways and emerging cities are becoming vibrant social corridors. ARENAA responds to this shift by offering a destination that blends food, entertainment, and community experiences in one integrated environment.
