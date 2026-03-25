@@ -109,7 +109,7 @@ export default function Footer() {
                         <ul className="space-y-6">
                             <li>
                                 <p className="text-[10px] uppercase font-bold text-white/30 mb-2">Email</p>
-                                <a href="mailto:info@chowk.co.in" className="text-sm font-bold text-white hover:text-[#FFB800] transition-colors">info@chowk.co.in</a>
+                                <a href="mailto:info@arenaa.in" className="text-sm font-bold text-white hover:text-[#FFB800] transition-colors">info@arenaa.in</a>
                             </li>
                             <li>
                                 <p className="text-[10px] uppercase font-bold text-white/30 mb-2">Office</p>

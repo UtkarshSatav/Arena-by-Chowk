@@ -106,16 +106,6 @@ export default function Hero() {
                     Scroll
                 </span>
             </div>
-            
-            {/* HUD details */}
-            <div className="absolute bottom-12 right-12 text-right hidden lg:block z-10">
-                <p className="text-[9px] font-bold uppercase tracking-[0.4em] mb-1" style={{ color: "rgba(255,184,0,0.4)" }}>
-                    Network Live
-                </p>
-                <p className="text-[10px] font-bold text-white/20 uppercase tracking-widest">
-                    v.2.0.4-ARENAA
-                </p>
-            </div>
         </section>
     );
 }
