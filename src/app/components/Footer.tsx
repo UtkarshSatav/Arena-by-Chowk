@@ -37,12 +37,12 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="col-span-1 lg:col-span-1">
                         <div className="flex items-center gap-4 mb-8">
-                            <div className="relative w-32 h-20 overflow-hidden rounded-sm border border-white/10 transition-transform">
+                            <div className="relative w-44 h-28 overflow-hidden rounded-sm transition-transform">
                                 <Image
-                                    src="/govindam_dish.jpg"
+                                    src="/e787c7df-5a87-4cae-9dd6-e037b828cbce.png"
                                     alt="ARENAA Logo"
                                     fill
-                                    className="object-cover"
+                                    className="object-contain"
                                 />
                             </div>
                         </div>
