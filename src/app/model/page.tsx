@@ -10,121 +10,167 @@ export default function ModelPage() {
     return (
         <main className="bg-black min-h-screen">
             <Navbar />
-            
-            <PageHero 
+
+            <PageHero
                 title="ARENAA Highway Model"
-                subtitle="Transforming Highway Stops Into Vibrant Lifestyle Destinations"
+                subtitle="A New Generation Highway Destination"
                 image="/arenaa_model_aerial.png"
             />
 
-            {/* Highway Model Section */}
+            {/* Intro */}
             <section className="py-24 px-6 border-b border-white/5">
-                <div className="max-w-7xl mx-auto flex flex-col items-center">
+                <div className="max-w-4xl mx-auto">
                     <FadeIn>
-                        <h2 className="text-sm font-bold uppercase tracking-[0.4em] text-[#FFB800] mb-8 text-center italic">A New Generation Highway Destination</h2>
-                        <h3 className="text-4xl md:text-6xl font-black text-white uppercase mb-12 text-center leading-tight max-w-4xl">
-                            Transforming Highway Stops Into <br /> <span className="text-[#FFB800]">Vibrant Destinations.</span>
-                        </h3>
-                        <p className="text-xl text-white/40 leading-relaxed font-light text-center max-w-3xl mx-auto">
-                            As India's highway infrastructure rapidly expands and travel between cities increases, highways are becoming important social corridors where travellers look for safe, engaging, and comfortable places to stop. ARENAA reimagines these spaces entirely.
+                        <h2 className="text-sm font-bold uppercase tracking-[0.5em] text-[#FFB800] mb-8">
+                            ARENAA Highway Model
+                        </h2>
+                        <p className="text-xl text-white font-bold leading-relaxed mb-6">
+                            The ARENAA Highway Model is designed to transform traditional highway stops into vibrant lifestyle destinations.
+                        </p>
+                        <p className="text-lg text-white/50 leading-relaxed mb-6">
+                            As India's highway infrastructure rapidly expands and travel between cities increases, highways are becoming important social corridors where travelers look for safe, engaging, and comfortable places to stop.
+                        </p>
+                        <p className="text-lg text-white/50 leading-relaxed">
+                            ARENAA reimagines highway stops by creating destinations that combine food, entertainment, and social spaces in one integrated environment.
                         </p>
                     </FadeIn>
                 </div>
             </section>
 
-            {/* Model Features */}
-            <section className="py-24 px-6">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                    {[
-                        { title: "Curated Food Courts", desc: "Restaurants and food courts designed for travellers and families." },
-                        { title: "Gaming & Entertainment", desc: "Interactive gaming zones and entertainment activities for all ages." },
-                        { title: "Celebration Spaces", desc: "Family-friendly social spaces and event areas for gatherings." },
-                        { title: "Rest & Relaxation", desc: "Comfortable environments designed for longer, more enjoyable stays." }
-                    ].map((feature, i) => (
-                        <div key={i} className="flex flex-col border-l border-white/10 pl-8 group">
-                            <div className="w-2 h-2 rounded-full bg-[#FFB800] mb-6 group-hover:scale-[2] transition-transform" />
-                            <h4 className="text-lg font-bold text-white uppercase mb-4 tracking-tighter">{feature.title}</h4>
-                            <p className="text-[10px] font-bold uppercase tracking-widest text-white/40 leading-relaxed group-hover:text-white/60 transition-colors">
-                                {feature.desc}
-                            </p>
-                        </div>
-                    ))}
+            {/* Designed for Modern Travel */}
+            <section className="py-24 px-6 border-b border-white/5 bg-white/[0.02]">
+                <div className="max-w-4xl mx-auto">
+                    <FadeIn>
+                        <h2 className="text-sm font-bold uppercase tracking-[0.5em] text-[#FFB800] mb-8">
+                            Designed for Modern Travel
+                        </h2>
+                        <p className="text-lg text-white/50 leading-relaxed mb-10">
+                            Traditional highway stops often offer limited facilities and short visitor stays. ARENAA changes this by offering a destination where travelers can relax, enjoy food, play games, and spend quality time with family and friends.
+                        </p>
+                        <p className="text-lg text-white/50 leading-relaxed mb-8">
+                            Each ARENAA highway destination includes:
+                        </p>
+                        <ul className="space-y-4 mb-10">
+                            {[
+                                "Curated food courts and restaurants",
+                                "Gaming and entertainment zones",
+                                "Family-friendly social spaces",
+                                "Celebration and event areas",
+                                "Comfortable rest and relaxation environments",
+                            ].map((item, i) => (
+                                <li key={i} className="flex items-center gap-4">
+                                    <div className="w-1.5 h-1.5 bg-[#FFB800] flex-shrink-0" />
+                                    <span className="text-sm font-bold uppercase tracking-widest text-white/60">{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                        <p className="text-lg text-white/50 leading-relaxed">
+                            This integrated format encourages longer visitor stays and repeat visits, making ARENAA a powerful destination anchor along major travel routes.
+                        </p>
+                    </FadeIn>
                 </div>
             </section>
 
             {/* Ideal Locations */}
-            <section className="py-24 bg-white/[0.02]">
-                <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-                    <FadeIn direction="right">
-                        <div>
-                            <h2 className="text-[#FFB800] font-black uppercase tracking-[0.3em] mb-4 text-sm italic">Ideal Locations</h2>
-                            <h3 className="text-4xl md:text-5xl font-black text-white uppercase mb-8">Suited for <br /> <span className="text-white/40">High-Traffic Routes.</span></h3>
-                            <ul className="space-y-8">
-                                {[
-                                    { label: "National & State Highways", icon: "road" },
-                                    { label: "Tourism Corridors", icon: "map" },
-                                    { label: "Pilgrimage Routes", icon: "mosque" },
-                                    { label: "High-Traffic Intercity Routes", icon: "location_city" }
-                                ].map((loc, i) => (
-                                    <li key={i} className="flex items-start gap-6 group">
-                                        <span className="material-symbols-outlined text-[#FFB800] text-3xl group-hover:scale-110 transition-transform">
-                                            {loc.icon}
-                                        </span>
-                                        <div>
-                                            <h4 className="text-white font-bold uppercase tracking-wider mb-1">{loc.label}</h4>
-                                            <p className="text-[9px] font-bold uppercase tracking-widest text-white/30">Strong potential for sustained visitor flow and long-term growth.</p>
-                                        </div>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </FadeIn>
-                    <FadeIn direction="left" delay={0.2}>
-                        <div className="relative aspect-square rounded-sm overflow-hidden border border-white/5 group">
-                            <Image 
-                                src="/layout_iso.jpg" 
-                                alt="ARENAA Strategic Model"
-                                fill
-                                className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale hover:grayscale-0"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-tr from-black/80 via-transparent to-transparent z-10" />
-                        </div>
+            <section className="py-24 px-6 border-b border-white/5">
+                <div className="max-w-4xl mx-auto">
+                    <FadeIn>
+                        <h2 className="text-sm font-bold uppercase tracking-[0.5em] text-[#FFB800] mb-8">
+                            Ideal Locations
+                        </h2>
+                        <p className="text-lg text-white/50 leading-relaxed mb-8">
+                            The ARENAA Highway Model is ideally suited for:
+                        </p>
+                        <ul className="space-y-4 mb-10">
+                            {[
+                                "National and state highways",
+                                "Tourism corridors",
+                                "Pilgrimage routes",
+                                "High-traffic intercity travel routes",
+                            ].map((item, i) => (
+                                <li key={i} className="flex items-center gap-4">
+                                    <div className="w-1.5 h-1.5 bg-[#FFB800] flex-shrink-0" />
+                                    <span className="text-sm font-bold uppercase tracking-widest text-white/60">{item}</span>
+                                </li>
+                            ))}
+                        </ul>
+                        <p className="text-lg text-white/50 leading-relaxed">
+                            These locations offer strong potential for sustained visitor flow and long-term destination growth.
+                        </p>
                     </FadeIn>
                 </div>
             </section>
 
-            {/* Architecture & Design Section */}
-            <section className="py-32 px-6">
-                <div className="max-w-7xl mx-auto text-center mb-24">
-                    <h2 className="text-sm font-bold uppercase tracking-[0.5em] text-[#FFB800] mb-8 italic">Architecture & Design</h2>
-                    <h3 className="text-4xl md:text-7xl font-black text-white uppercase mb-4 tracking-tighter">Designed to Create <span className="text-white/40">Memorable Destinations.</span></h3>
-                    <p className="text-xl text-white/40 max-w-3xl mx-auto mt-8 leading-relaxed">
-                        Our architectural approach combines modern design, welcoming social spaces, and carefully planned layouts that encourage exploration and interaction between dining, entertainment, and social spaces.
-                    </p>
+            {/* Architecture & Design */}
+            <section className="py-24 px-6 border-b border-white/5 bg-white/[0.02]">
+                <div className="max-w-4xl mx-auto">
+                    <FadeIn>
+                        <h2 className="text-sm font-bold uppercase tracking-[0.5em] text-[#FFB800] mb-8">
+                            Architecture & Design
+                        </h2>
+                        <h3 className="text-3xl md:text-4xl font-black text-white uppercase mb-8 leading-tight">
+                            Designed to Create <span className="text-[#FFB800]">Memorable Destinations.</span>
+                        </h3>
+                        <p className="text-lg text-white/50 leading-relaxed mb-6">
+                            Every ARENAA destination is designed to deliver a unique and memorable visitor experience. Our architectural approach combines modern design, welcoming social spaces, and carefully planned layouts that encourage exploration and interaction.
+                        </p>
+                        <p className="text-lg text-white/50 leading-relaxed">
+                            The goal is to create environments where visitors naturally move between dining, entertainment, and social spaces.
+                        </p>
+                    </FadeIn>
                 </div>
+            </section>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    {[
-                        { title: "Open Social Spaces", img: "/outdoor_seating.jpg" },
-                        { title: "Integrated Experience Zones", img: "/layout_3d.jpg" },
-                        { title: "Cultural Elements", img: "/govindam_dining.jpg" }
-                    ].map((item, i) => (
-                        <FadeIn key={i} delay={i * 0.1}>
-                            <div className="relative aspect-[4/5] overflow-hidden rounded-sm group">
-                                <Image 
-                                    src={item.img} 
-                                    alt={item.title}
-                                    fill
-                                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10" />
-                                <div className="absolute bottom-8 left-8 z-20">
-                                    <h4 className="text-2xl font-black text-white uppercase tracking-tighter group-hover:text-[#FFB800] transition-colors">{item.title}</h4>
-                                    <div className="w-8 h-1 bg-[#FFB800] mt-4 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500" />
+            {/* Key Design Principles */}
+            <section className="py-24 px-6">
+                <div className="max-w-7xl mx-auto">
+                    <FadeIn>
+                        <h2 className="text-sm font-bold uppercase tracking-[0.5em] text-[#FFB800] mb-16 text-center">
+                            Key Design Principles
+                        </h2>
+                    </FadeIn>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {[
+                            {
+                                title: "Open Social Spaces",
+                                desc: "Large central gathering areas create vibrant community environments where visitors can relax and interact.",
+                                img: "/outdoor_seating.jpg",
+                            },
+                            {
+                                title: "Integrated Experience Zones",
+                                desc: "Dining, gaming, and entertainment areas are seamlessly connected to create a dynamic flow of activity.",
+                                img: "/layout_3d.jpg",
+                            },
+                            {
+                                title: "Family-Friendly Layouts",
+                                desc: "Spaces are designed to ensure comfort and accessibility for visitors of all age groups.",
+                                img: "/layout_iso.jpg",
+                            },
+                            {
+                                title: "Cultural Elements",
+                                desc: "Through concepts like Govindam, ARENAA integrates cultural design elements that celebrate India's heritage and traditions.",
+                                img: "/govindam_dining.jpg",
+                            },
+                        ].map((item, i) => (
+                            <FadeIn key={i} delay={i * 0.1}>
+                                <div className="glass-card border-white/5 bg-white/[0.02] overflow-hidden group hover:border-[#FFB800]/20 transition-all">
+                                    <div className="relative aspect-video overflow-hidden">
+                                        <Image
+                                            src={item.img}
+                                            alt={item.title}
+                                            fill
+                                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                                    </div>
+                                    <div className="p-8">
+                                        <h4 className="text-lg font-black text-white uppercase tracking-tight mb-3">{item.title}</h4>
+                                        <p className="text-sm text-white/40 leading-relaxed">{item.desc}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </FadeIn>
-                    ))}
+                            </FadeIn>
+                        ))}
+                    </div>
                 </div>
             </section>
 
