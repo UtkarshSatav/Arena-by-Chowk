@@ -36,7 +36,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
                     {/* Brand */}
                     <div className="col-span-1 lg:col-span-1">
-                        <div className="relative w-72 h-44 mb-8">
+                        <div className="relative w-48 h-16 mb-8">
                                 <Image
                                     src="/e787c7df-5a87-4cae-9dd6-e037b828cbce.png"
                                     alt="ARENAA Logo"
