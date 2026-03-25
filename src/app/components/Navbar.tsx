@@ -37,12 +37,12 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
                 {/* Brand Logo */}
                 <Link href="/" className="group flex items-center">
-                    <div className="relative w-28 h-16 overflow-hidden rounded-sm transition-transform duration-300 group-hover:scale-110">
+                    <div className="relative w-64 h-24 transition-transform duration-300 group-hover:scale-105">
                         <Image
                             src="/e787c7df-5a87-4cae-9dd6-e037b828cbce.png"
                             alt="ARENAA Logo"
                             fill
-                            className="object-contain"
+                            className="object-cover"
                         />
                     </div>
                 </Link>

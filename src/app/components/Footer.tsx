@@ -36,16 +36,14 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
                     {/* Brand */}
                     <div className="col-span-1 lg:col-span-1">
-                        <div className="flex items-center gap-4 mb-8">
-                            <div className="relative w-44 h-28 overflow-hidden rounded-sm transition-transform">
+                        <div className="relative w-72 h-44 mb-8">
                                 <Image
                                     src="/e787c7df-5a87-4cae-9dd6-e037b828cbce.png"
                                     alt="ARENAA Logo"
                                     fill
-                                    className="object-contain"
+                                    className="object-cover"
                                 />
                             </div>
-                        </div>
                         <p className="text-white/40 text-sm leading-relaxed mb-8">
                             Next-generation lifestyle destination where food, entertainment, and social experiences come together in one vibrant space.
                         </p>
